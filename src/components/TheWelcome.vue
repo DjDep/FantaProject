@@ -1,4 +1,4 @@
-<script setup>
+<!--<script setup>
 import WelcomeItem from './WelcomeItem.vue'
 import DocumentationIcon from './icons/IconDocumentation.vue'
 import ToolingIcon from './icons/IconTooling.vue'
@@ -33,8 +33,7 @@ import SupportIcon from './icons/IconSupport.vue'
       test your components and web pages, check out
       <a href="https://www.cypress.io/" target="_blank">Cypress</a> and
       <a href="https://docs.cypress.io/guides/component-testing/introduction" target="_blank"
-        >Cypress Component Testing</a
-      >.
+        >Cypress Component Testing</a>.
 
       <br />
 
@@ -83,4 +82,4 @@ import SupportIcon from './icons/IconSupport.vue'
       <a target="_blank" href="https://vuejs.org/sponsor/">becoming a sponsor</a>.
     </WelcomeItem>
   </div>
-</template>
+</template>-->

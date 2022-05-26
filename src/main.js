@@ -2,6 +2,15 @@ import Vue from 'vue'
 import VueCompositionAPI, { createApp, h } from '@vue/composition-api'
 import firebase from 'firebase/compat/app'
 import 'firebase/compat/firestore' 
+import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+import 'bootstrap/dist/css/bootstrap.css';
+
+
+Vue.use(BootstrapVue)
+Vue.use(IconsPlugin)
+
+Vue.use(BootstrapVue);
 
 import App from './App.vue'
 import router from './router'
@@ -19,6 +28,8 @@ const firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+export const database = getFirestore(app);
 
 
 Vue.use(VueCompositionAPI)
