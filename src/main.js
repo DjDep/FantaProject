@@ -1,10 +1,17 @@
 import Vue from 'vue'
 import VueCompositionAPI, { createApp, h } from '@vue/composition-api'
 import firebase from 'firebase/compat/app'
-import 'firebase/compat/firestore' 
+import 'firebase/compat/firestore'
+import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+import 'bootstrap/dist/css/bootstrap.css';
+//Icone BootstrapVue
+import {BootstrapVueIcons } from 'bootstrap-vue'
 
 import App from './App.vue'
 import router from './router'
+Vue.use(BootstrapVue);
+Vue.use(BootstrapVueIcons)
 
 // Your web app's Firebase configuration
 const firebaseConfig = {

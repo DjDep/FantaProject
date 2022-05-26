@@ -20,7 +20,7 @@ import HelloWorld from '@/components/HelloWorld.vue'
     <router-view />
   </div>
 </template>
-
+<!--
 <style>
 @import '@/assets/base.css';
 
@@ -118,3 +118,4 @@ nav a:first-of-type {
   }
 }
 </style>
+-->

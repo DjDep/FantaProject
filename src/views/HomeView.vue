@@ -1,9 +1,15 @@
 <script setup lang="ts">
 import TheWelcome from '@/components/TheWelcome.vue'
+import componentHeaderSquadre from '@/components/HeaderSquadre.vue'
+import Footerhome2 from '@/components/Footerhome2.vue'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <componentHeaderSquadre />
+    
+    <!--<TheWelcome />-->
+    <Footerhome2 />
+    
   </main>
 </template>
