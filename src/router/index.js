@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import LoginView from '../views/LoginView.vue'
 import HomeView from '../views/HomeView.vue'
 import ListView from '../views/ListView.vue'
 import TeamsView from '../views/TeamsView.vue'
@@ -15,8 +16,16 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
+      name: 'login',
+      component: () => import('../views/LoginView.vue')
+    },
+    {
+      path: '/home',
       name: 'home',
-      component: HomeView
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/HomeView.vue')
     },
     {
       path: '/about',
@@ -40,11 +49,6 @@ const router = new VueRouter({
       path: '/teams',
       name: 'teams',
       component: () => import('../views/TeamsView.vue')
-    },
-    {
-      path: '/myteam',
-      name: 'myteam',
-      component: () => import('../views/MyTeamView.vue')
     },
     {
       path: '/myteam',

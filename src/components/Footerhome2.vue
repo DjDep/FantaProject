@@ -126,4 +126,8 @@ footer{
 .about{
     text:right;
 }
+
+footer{
+  height: 300px;
+}
 </style>

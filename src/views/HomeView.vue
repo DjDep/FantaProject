@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import TheWelcome from '@/components/TheWelcome.vue'
-import componentHeaderSquadre from '@/components/HeaderSquadre.vue'
-import Footerhome2 from '@/components/Footerhome2.vue'
-import TopBar from '@/components/TopBar.vue'
+// import TheWelcome from '@/components/TheWelcome.vue'
+// import componentHeaderSquadre from '@/components/HeaderSquadre.vue'
+// import Footerhome2 from '@/components/Footerhome2.vue'
+// import TopBar from '@/components/TopBar.vue'
 </script>
 
 <template>
   <main>
-    <componentHeaderSquadre />
+    <!-- <componentHeaderSquadre /> -->
     
     <!--<TheWelcome />-->
-    <Footerhome2 />
+    <!-- <Footerhome2 />
     
     <TopBar />
-    <TheWelcome />
+    <TheWelcome /> -->
   </main>
 </template>

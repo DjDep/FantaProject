@@ -6,7 +6,7 @@
 <nav class="navbar navbar-expand-sm bg-success navbar-dark p-3">
   <!-- Brand -->
   <a class="navbar-brand" href="/">
-    <img alt="logo" class="logo" src="@/assets/logoApp.png" width="40" height="40" />
+    <img alt="logo" class="logo" src="/PalloneSerieA.png" width="40" height="40" />
   </a>
 
   <!-- Links -->

@@ -1,9 +1,11 @@
 <script setup>
 import TopBar from '@/components/TopBar.vue'
+import LoginViewVue from './views/LoginView.vue';
 </script>
 
 <template>
   <div id="app">
+    <!-- <LoginViewVue /> -->
     <!--<header>
       <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
