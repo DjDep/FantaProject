@@ -1,6 +1,11 @@
-
-
 <template>
+    
+    <div class="footbllers">
+    <TopBar />
+        <h1>This is an about page</h1>
+        <Footer/>
+
+
     <div class="row">
         <div class="col-md-12">
             <table class="table table-striped">
@@ -44,9 +49,14 @@
             </table>
         </div>
     </div>
+    </div>
+    
 </template>
+
 <script>
-    import  db  from '../main.js';
+import TopBar from '@/components/TopBar.vue'
+import Footer from '@/components/Footer.vue'
+import  db  from '../main.js';
     
     export default {
         data() {
@@ -91,7 +101,7 @@
         }*/
     }
 </script>
-<style>
+<style scoped>
     .btn-primary {
         margin-right: 12px;
     }

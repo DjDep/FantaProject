@@ -1,7 +1,3 @@
-<script setup >
-import TopBar from '@/components/TopBar.vue'
-</script>
-
 <template>
     
     <div class="footballers">
@@ -66,14 +62,21 @@ import TopBar from '@/components/TopBar.vue'
                 </tbody>
             </table>
         </div>
+         </div>
+        
+        <Footer/>
+       
     </div>
-        </div>
+    
 
 </template>
 
 
 <script>
-    import  db  from '../main.js';
+import TopBar from '@/components/TopBar.vue'
+import HeaderSquadre from '@/components/HeaderSquadre.vue'
+import Footer from '@/components/Footer.vue'
+import  db  from '../main.js';
     
     export default {
         data() {
@@ -100,6 +103,11 @@ import TopBar from '@/components/TopBar.vue'
                     })
                 });
         },
+        components:{
+            HeaderSquadre,
+            TopBar,
+            Footer,
+        }
         /*methods: {
             deleteUser(id){
               if (window.confirm("Do you really want to delete?")) {
@@ -115,8 +123,7 @@ import TopBar from '@/components/TopBar.vue'
     }
 </script>
 
-<style>
-
+<style scoped>
 .nav-link {
     padding:0px;
     margin: 10px;

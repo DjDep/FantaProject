@@ -1,16 +1,12 @@
-<script setup>
-
+<script>
 </script>
 
 <template>
 <nav class="navbar navbar-expand-sm bg-success navbar-dark p-3">
   <!-- Brand -->
   <a class="navbar-brand" href="/">
-    <img alt="logo" class="logo" src="/PalloneSerieA.png" width="40" height="40" />
-  </a>
-
   <!-- Links -->
-  <ul class="navbar-nav">
+  <ul>
     <li class="nav-item">
         <a class="nav-link"><router-link to="/list">Calciatori seria A</router-link></a>
     </li>
@@ -24,10 +20,11 @@
         <a class="nav-link"><router-link to="/account">il mio account</router-link></a>
     </li>
   </ul>
+  </a>
 </nav>
 </template>
 
-<style>
+<style scoped>
   a {
       color: white;
       text-decoration: none;
