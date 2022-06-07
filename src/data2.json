@@ -1,0 +1,202 @@
+[
+    {
+     "Squadra": "Atalanta",
+     "Allenatore": "Gasperini Gian Piero",
+     "Stadio": "Atleti Azzurri d’Italia",
+     "Capienza stadio": 26562,
+     "Data di fondazione": 1907,
+     "Info": "L'Atalanta Bergamasca Calcio, meglio nota come Atalanta, è una società calcistica italiana con sede nella città di Bergamo.\nFondata il 17 ottobre 1907, viene soprannominata \"regina delle provinciali” perché è la squadra col maggior numero di presenze nel massimo campionato italiano di calcio\n",
+     "Logo": "https:\/\/content.fantacalcio.it\/web\/img\/team\/atalanta.png",
+     "Classifica": 8
+    },
+    {
+     "Squadra": "Bologna",
+     "Allenatore": "Mihajlovic Sinisa",
+     "Stadio": "Renato Dall’Ara",
+     "CapienzaStadio": 38279,
+     "Data di fondazione": 1909,
+     "Info": "Il Bologna Football Club, meglio noto come Bologna (o colloquialmente con la sigla BFC, \"Bologna Football Club\"), è una società calcistica italiana per azioni con sede nell'omonima città emiliana.\n",
+     "Logo": "https:\/\/content.fantacalcio.it\/web\/img\/team\/bolognanew.png",
+     "Classifica": 13
+    },
+    {
+     "Squadra": "Cagliari",
+     "Allenatore": "Agostini Alessandro",
+     "Stadio": "Sardegna Arena",
+     "Capienza stadio": 16000,
+     "Data di fondazione": 1920,
+     "Info": "Il Cagliari Calcio, meglio noto come Cagliari, è una società calcistica italiana con sede nella città di Cagliari. Fondata nel 1920, è l'unica squadra della Sardegna ad avere militato in Serie A o in Serie B ",
+     "Logo": "https:\/\/content.fantacalcio.it\/web\/img\/team\/cagliari.png",
+     "Classifica": 18
+    },
+    {
+     "Squadra": "Empoli",
+     "Allenatore": "Andreazzoli Aurelio",
+     "Stadio": "Carlo Castellani",
+     "Capienza stadio": 16800,
+     "Data di fondazione": 1920,
+     "Info": "L'Empoli Football Club, meglio noto come Empoli, è una società calcistica italiana con sede nella città di Empoli, nella città metropolitana di Firenze. La squadra fa parte del ristretto gruppo di club, non facenti parte di capoluoghi di regione, che abbiano partecipato a un campionato di calcio di massima divisione.\n",
+     "Logo": "https:\/\/content.fantacalcio.it\/web\/img\/team\/empoli.png",
+     "Classifica": 14
+    },
+    {
+     "Squadra": "Fiorentina",
+     "Allenatore": "Italiano Vincenzo",
+     "Stadio": "Artemio Franchi",
+     "Capienza stadio": 47290,
+     "Data di fondazione": 1926,
+     "Info": "L'ACF Fiorentina, meglio nota come Fiorentina, è una società calcistica italiana con sede nella città di Firenze. Il colore sociale è il viola, scelta cromatica voluta espressamente dallo stesso Ridolfi nel 1929. \n",
+     "Logo": "https:\/\/content.fantacalcio.it\/web\/img\/team\/fiorentina.png",
+     "Classifica": 7
+    },
+    {
+     "Squadra": "Genoa",
+     "Allenatore": "Blessin Alexander",
+     "Stadio": "Luigi Ferraris",
+     "Capienza stadio": 36599,
+     "Data di fondazione": 1893,
+     "Info": "l Genoa Cricket and Football Club, meglio noto come Genoa, è una società calcistica italiana con sede nella città di Genova. La squadra è stata fondata nel 1893, la più longeva tra i club italiani ancora in attività, nonché la prima vincitrice dello scudetto.\n",
+     "Logo": "https:\/\/content.fantacalcio.it\/web\/img\/team\/genoa.png",
+     "Classifica": 19
+    },
+    {
+     "Squadra": "Inter",
+     "Allenatore": "Inzaghi Simone",
+     "Stadio": "Giuseppe Meazza",
+     "Capienza stadio": 81277,
+     "Data di fondazione": 1908,
+     "Info": "Il Football Club Internazionale Milano, meglio conosciuto come Internazionale o più semplicemente come Inter, è una società calcistica italiana con sede nella città di Milano. Il club è stato fondato il 9 marzo 1908 da un gruppo di soci dissidenti del Milan, e da quel momento ha sempre militato nella \nmassima serie del campionato nazionale a partire dalla propria prima partita ufficiale, nel 1909, ed è l'unico ad aver partecipato a tutte le edizioni della Serie A.\n",
+     "Logo": "https:\/\/content.fantacalcio.it\/web\/img\/team\/inter2021.png",
+     "Classifica": 2
+    },
+    {
+     "Squadra": "Juventus",
+     "Allenatore": "Allegri Massimiliano",
+     "Stadio": "Allianz Stadium",
+     "Capienza stadio": 41475,
+     "Data di fondazione": 1897,
+     "Info": "La Juventus Football Club, meglio nota come Juventus, è una società calcistica italiana con sede nella città di Torino. Fondata nel 1897 da un gruppo di studenti liceali locali, la Juve, com'è colloquialmente abbreviata, è il secondo club professionistico per anzianità tra quelli tuttora attivi nel Paese, ed è il più titolato.\n",
+     "Logo": "https:\/\/content.fantacalcio.it\/web\/img\/team\/juventus.png",
+     "Classifica": 4
+    },
+    {
+     "Squadra": "Lazio",
+     "Allenatore": "Sarri Maurizio",
+     "Stadio": "Olimpico",
+     "Capienza stadio": 72698,
+     "Data di fondazione": 1900,
+     "Info": "La Società Sportiva Lazio, meglio nota come S.S. Lazio o più semplicemente Lazio, è una società polisportiva italiana di Roma, nota soprattutto per la sua sezione calcistica. Fu fondata il 9 gennaio 1900 come Società Podistica Lazio da nove atleti guidati dal sottufficiale dei Bersaglieri Luigi Bigiarelli.",
+     "Logo": "https:\/\/content.fantacalcio.it\/web\/img\/team\/lazio.png",
+     "Classifica": 5
+    },
+    {
+     "Squadra": "Milan",
+     "Allenatore": "Pioli Stefano",
+     "Stadio": "Giuseppe Meazza",
+     "Capienza stadio": 81277,
+     "Data di fondazione": 1899,
+     "Info": "L'Associazione Calcio Milan, meglio nota come A.C. Milan o semplicemente Milan, è una società calcistica italiana fondata nel 1899 con sede nella città di Milano. È la terza squadra al mondo per numero di titoli internazionali vinti. In ambito internazionale è la squadra italiana con più successi e la prima squadra italiana ad essersi aggiudicata la Coppa dei Campioni.",
+     "Logo": "https:\/\/content.fantacalcio.it\/web\/img\/team\/milan.png",
+     "Classifica": 1
+    },
+    {
+     "Squadra": "Napoli",
+     "Allenatore": "Spalletti Luciano",
+     "Stadio": "Diego Armando Maradona",
+     "Capienza stadio": 60240,
+     "Data di fondazione": 1926,
+     "Info": "La Società Sportiva Calcio Napoli, meglio nota come Napoli, è una società calcistica italiana con sede nella città di Napoli. Il colore sociale è l'azzurro, mentre la mascotte è il Ciuccio,  originariamente un cavallo inalberato.",
+     "Logo": "https:\/\/content.fantacalcio.it\/web\/img\/team\/napolinew.png",
+     "Classifica": 3
+    },
+    {
+     "Squadra": "Roma",
+     "Allenatore": "Mourinho Josè",
+     "Stadio": "Olimpico",
+     "Capienza stadio": 72698,
+     "Data di fondazione": 1927,
+     "Info": "L'Associazione Sportiva Roma, meglio nota come AS Roma o più semplicemente Roma, è una società calcistica italiana con sede nella città di Roma. Fondata nel 1927 grazie alla fusione di tre squadre, ha come colori sociali il rosso e il giallo.",
+     "Logo": "https:\/\/content.fantacalcio.it\/web\/img\/team\/roma.png",
+     "Classifica": 6
+    },
+    {
+     "Squadra": "Salernitana",
+     "Allenatore": "Nicola Davide",
+     "Stadio": "Arechi",
+     "Capienza stadio": 26000,
+     "Data di fondazione": 1919,
+     "Info": "L'Unione Sportiva Salernitana 1919, meglio nota come Salernitana, è una società calcistica italiana con sede nella città di Salerno. Il colore ufficiale della Salernitana è il granata dal 1943 (esclusa la stagione 2011-2012 per ragioni giuridiche) e il suo simbolo è l'ippocampo dal 1949.",
+     "Logo": "https:\/\/content.fantacalcio.it\/web\/img\/team\/salernitana.png",
+     "Classifica": 17
+    },
+    {
+     "Squadra": "Sampdoria",
+     "Allenatore": "Giampaolo Marco",
+     "Stadio": "Luigi Ferraris",
+     "Capienza stadio": 36599,
+     "Data di fondazione": 1946,
+     "Info": "L'Unione Calcio Sampdoria, meglio nota come Sampdoria, è una società calcistica italiana con sede nella città di Genova. Soprannominata la Samp o il Doria, è nata il 12 agosto 1946 dalla fusione tra la Sampierdarenese e l'Andrea Doria.",
+     "Logo": "https:\/\/content.fantacalcio.it\/web\/img\/team\/sampdoria.png",
+     "Classifica": 15
+    },
+    {
+     "Squadra": "Sassuolo",
+     "Allenatore": "Dionisi Alessio",
+     "Stadio": "Mapei Stadium",
+     "Capienza stadio": 23717,
+     "Data di fondazione": 1922,
+     "Info": "L'Unione Sportiva Sassuolo Calcio, meglio nota come Sassuolo, è una società calcistica italiana con sede nella città di Sassuolo, in provincia di Modena.  I suoi colori sociali sono il nero e il verde, da cui il soprannome di neroverdi; altro soprannome noto del club è Sasôl.",
+     "Logo": "https:\/\/content.fantacalcio.it\/web\/img\/team\/sassuolooriginal.png",
+     "Classifica": 11
+    },
+    {
+     "Squadra": "Spezia",
+     "Allenatore": "Thiago Motta",
+     "Stadio": "Alberto Picco",
+     "Capienza stadio": 10336,
+     "Data di fondazione": 1906,
+     "Info": "Lo Spezia Calcio, comunemente noto come Spezia, è una società calcistica italiana con sede nella città della Spezia. Il colore sociale è il bianco, anche se il gioco cromatico bianco-nero è spesso presente nelle divise.",
+     "Logo": "https:\/\/content.fantacalcio.it\/web\/img\/team\/spezia.png",
+     "Classifica": 16
+    },
+    {
+     "Squadra": "Torino",
+     "Allenatore": "Juric Ivan",
+     "Stadio": "Olimpico Grande Torino",
+     "Capienza stadio": 28140,
+     "Data di fondazione": 1906,
+     "Info": "Il Torino Football Club, meglio conosciuto come Torino, è una società calcistica italiana con sede nella città di Torino. La tradizionale divisa casalinga del Torino è composta da una maglia granata abbinata a calzoncini bianchi. Lo stemma è il toro in posizione rampante, nonché simbolo della città di Torino.",
+     "Logo": "https:\/\/content.fantacalcio.it\/web\/img\/team\/torino.png",
+     "Classifica": 10
+    },
+    {
+     "Squadra": "Udinese",
+     "Allenatore": "Cioffi Gabriele",
+     "Stadio": "Dacia Arena",
+     "Capienza stadio": 25000,
+     "Data di fondazione": 1896,
+     "Info": "L'Udinese Calcio, meglio nota come Udinese, è una società calcistica italiana con sede nella città di Udine. I suoi colori sociali sono il bianco e il nero, ripresi dallo stemma comunale; in ragione di tale accostamento cromatico, i giocatori guadagnarono il soprannome di bianconeri e di zebrette",
+     "Logo": "https:\/\/content.fantacalcio.it\/web\/img\/team\/udinese.png",
+     "Classifica": 12
+    },
+    {
+     "Squadra": "Venezia",
+     "Allenatore": "Soncin Andrea",
+     "Stadio": "Penzo",
+     "Capienza stadio": 7389,
+     "Data di fondazione": 1907,
+     "Info": "Il Venezia Football Club, meglio noto come Venezia, è una società calcistica italiana con sede nella città di Venezia. Nel 1987 la fusione tra Venezia e Mestre ha sancito l'affiancamento dell'arancione (tinta peculiare del club mestrino) al neroverde veneziano.",
+     "Logo": "https:\/\/content.fantacalcio.it\/web\/img\/team\/venezia.png",
+     "Classifica": 20
+    },
+    {
+     "Squadra": "Verona",
+     "Allenatore": "Tudor Igor",
+     "Stadio": "Marcantonio Bentegodi",
+     "Capienza stadio": 39371,
+     "Data di fondazione": 1903,
+     "Info": "L'Hellas Verona Football Club, meglio noto come Hellas Verona o più semplicemente Verona, è una società calcistica italiana con sede nella città di Verona. I colori sociali del Verona, il giallo e il blu, richiamano quelli dello stemma della città veneta, che sono in realtà l'oro e l'azzurro. I soprannomi della squadra sono \"i Mastini\" e \"gli Scaligeri\", in riferimento alla famiglia Della Scala che governò Verona tra il XIII e il XIV secolo; lo stemma araldico degli Scaligeri è richiamato sulla tenuta di gioco e sul marchio societario come un'immagine stilizzata di due possenti mastini rivolti in direzioni opposte.",
+     "Logo": "https:\/\/content.fantacalcio.it\/web\/img\/team\/verona.png",
+     "Classifica": 9
+    }
+   ]

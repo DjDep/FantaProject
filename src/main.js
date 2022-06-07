@@ -1,23 +1,16 @@
 import Vue from 'vue'
 import VueCompositionAPI, { createApp, h } from '@vue/composition-api'
-import firebase from 'firebase/compat/app'
-import 'firebase/compat/firestore' 
 import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-
-Vue.use(BootstrapVue)
-Vue.use(IconsPlugin)
-
-Vue.use(BootstrapVue);
+import firebase from 'firebase'
 
 import App from './App.vue'
 import router from './router'
 Vue.use(BootstrapVue);
-Vue.use(BootstrapVueIcons)
 
-// Your web app's Firebase configuration
+
 const firebaseConfig = {
   apiKey: "AIzaSyA3o5UL5TFEVqbAqX912ntJahznIqZK6Jo",
   authDomain: "madama138.firebaseapp.com",
@@ -28,11 +21,26 @@ const firebaseConfig = {
   appId: "1:963846846243:web:03437be760909526677e96"
 };
 
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-export const database = getFirestore(app);
+var db = firebase.firestore();
 
+export default db
+
+
+//////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////
 
 Vue.use(VueCompositionAPI)
 
