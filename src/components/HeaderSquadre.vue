@@ -46,7 +46,7 @@ export default {
 
 <ul class="nav justify-content-center">
     <li class="nav-item submenu-items">
-        <a class="nav-link submenu-itemHS">
+        <a class="nav-link">
              <img class="iconHS" src="https://content.fantacalcio.it/web/img/team/atalanta.png" alt="Atalanta" href="#">
         </a>
     </li>
@@ -72,9 +72,15 @@ export default {
     </li>
      <li class="nav-item submenu-items">
         <a class="nav-link">
-             <img class="iconHS" src="https://content.fantacalcio.it/web/img/team/salernitana.png" alt="Salernitana" href="#">
+             <img class="iconHS" src="https://content.fantacalcio.it/web/img/team/napoli.png" alt="Napoli" href="#">
         </a>
     </li>
+    <li class="nav-item submenu-items">
+        <a class="nav-link">
+             <img class="iconHS" src="https://content.fantacalcio.it/web/img/team/verona.png" alt="HellasVerona" href="#">
+        </a>
+    </li>
+    
     </ul>
 </template>
 
@@ -91,17 +97,22 @@ export default {
     width: auto;
 
 }
+.submenu-items:hover{
+    background-color:lightblue;
+}
 
 .iconHS { /* logo/icona */
-    height: 50px;
-    width: 50px;
+    height: 55px;
+    width: 55px;
     margin:  0px;
+    padding:0px;
 }
 .justify-content-center {
     background-color: lightgreen;
-    margin: 10px;
+    margin: 0px;
     padding: 0px;
 
 }
+
 
 </style>

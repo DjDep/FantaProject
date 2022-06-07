@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import TopBar from '@/components/TopBar.vue'
+import Footerhome2 from '@/components/Footerhome2.vue'
 </script>
 
 <template>
@@ -7,15 +8,10 @@ import TopBar from '@/components/TopBar.vue'
     <div class="footbllers">
     <TopBar />
         <h1>This is an about page</h1>
+        <Footerhome2 />
     </div>
+    
 </template>
 
 <style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
 </style>

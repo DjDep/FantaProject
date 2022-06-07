@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import TopBar from '@/components/TopBar.vue'
+import componentHeaderSquadre from '@/components/HeaderSquadre.vue'
+import Footerhome2 from '@/components/Footerhome2.vue'
 </script>
 
 <template>
@@ -7,6 +9,10 @@ import TopBar from '@/components/TopBar.vue'
     <div class="footbllers">
 
     <TopBar />
+    <componentHeaderSquadre />
+    <h1>Squadre</h1>
+    
+    <!--
         <ul class="nav justify-content-center">
         <li class="nav-item submenu-items">
             <a class="nav-link submenu-itemHS">
@@ -29,20 +35,14 @@ import TopBar from '@/components/TopBar.vue'
             </a>
         </li>
         </ul>
-        <h1>Pagina delle squadre </h1>
+        <h1>Pagina delle squadre </h1>-->
+         <Footerhome2/>
     </div>
+    
+    
 </template>
 
 <style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-
-
 .nav-link {
     padding:0px;
     margin: 10px;

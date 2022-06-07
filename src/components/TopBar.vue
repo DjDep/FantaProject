@@ -6,7 +6,7 @@
 <nav class="navbar navbar-expand-sm bg-success navbar-dark p-3">
   <!-- Brand -->
   <a class="navbar-brand" href="/">
-    <img alt="logo" class="logo" src="@/assets/logoApp.png" width="40" height="40" />
+    <img alt="logo" class="logo" src="@/assets/logoFP.png" width="80" height="80" />
   </a>
 
   <!-- Links -->
@@ -35,7 +35,7 @@
         <a class="dropdown-item" href="#">Logout</a>
       </div>
     </li>-->
-    <a id="prova"><i class="fa-brands fa-facebook"></i></a>
+    
   </ul>
 </nav>
 </template>
@@ -51,5 +51,12 @@
 
   #prova2 {
     color: blue!important;
+  }
+  .logo{
+    margin:0px;
+    padding:5px;
+  }
+  .navbar-brand{
+    padding:0px;
   }
 </style>
