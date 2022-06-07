@@ -1,16 +1,12 @@
 <script setup lang="ts">
-// import TopBar from '@/components/TopBar.vue'
-</script>
+import TopBar from '@/components/TopBar.vue'
 
-<template>
+</script>
     
-    <div class="footballers">
-    <!-- <TopBar /> -->
-        <h1>Il mio account</h1>
-        
-    </div>
+<template>
 
 </template>
 
 <style>
+  
 </style>
