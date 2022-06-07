@@ -1,7 +1,10 @@
-
+<script setup >
+import TopBar from '@/components/TopBar.vue'
+</script>
 
 <template>
     <div class="row">
+        <TopBar />
         <div class="col-md-12">
             <table class="table table-striped">
                 <thead>
@@ -21,9 +24,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="footballer in footballers" :key="footballer.key">
+                    <tr v-for="footballer in footballers" :key="footballer.ID">
                         <td>{{ footballer.AnnodiNascita }}</td>
-                        <td>{{ footballer.CognomeNome }}</td>
+                        <td><router-link :to ="{name: 'detail', params: {id: footballer.ID}}">{{ footballer.CognomeNome }}</router-link></td>
                         <td>{{ footballer.MediaFantavoto }}</td>
                         <td>{{ footballer.MediaVoto }}</td>
                         <td><img :src="footballer.Cartoncino"> </td>
@@ -58,7 +61,7 @@
             db.collection('footballers').get().then(querySnapshot => {
                 querySnapshot.forEach(doc => {
                   const data = {
-                    key: doc.id,
+                    //key: doc.id,
                         'AnnodiNascita': doc.data()['Anno di nascita'],
                         'CognomeNome': doc.data().CognomeNome,
                         'MediaFantavoto': doc.data()['Media fantavoto'],

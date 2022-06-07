@@ -56,6 +56,10 @@ const router = new VueRouter({
       name: 'account',
       component: () => import('../views/AccountView.vue')
     },
+    { 
+      path: "/list/:ID", 
+      name: 'detail',
+      component: () => import('../views/FootballDetail.vue') },
   ]
 })
 
