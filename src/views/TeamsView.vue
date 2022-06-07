@@ -1,37 +1,12 @@
-<script setup >
-import TopBar from '@/components/TopBar.vue'
-</script>
-
 <template>
     
     <div class="footbllers">
+     <TopBar/>
+     <HeaderSquadre />
+     <h1>Squadre</h1>
+     <h1>Pagina delle squadre </h1>
 
-    <TopBar />
-        <ul class="nav justify-content-center">
-        <li class="nav-item submenu-items">
-            <a class="nav-link submenu-itemHS">
-                <img class="iconHS" src="https://content.fantacalcio.it/web/img/team/atalanta.png" alt="Atalanta" href="#">
-            </a>
-        </li>
-        <li class="nav-item submenu-items">
-            <a class="nav-link">
-                <img class="iconHS" src="https://content.fantacalcio.it/web/img/team/bologna.png" alt="Bologna" href="#">
-            </a>
-        </li>
-        <li class="nav-item submenu-items">
-            <a class="nav-link">
-                <img class="iconHS" src="https://content.fantacalcio.it/web/img/team/venezia.png" alt="Venezia" href="#">
-            </a>
-        </li>
-        <li class="nav-item submenu-items">
-            <a class="nav-link">
-                <img class="iconHS" src="https://content.fantacalcio.it/web/img/team/salernitana.png" alt="Salernitana" href="#">
-            </a>
-        </li>
-        </ul>
-        <h1>Pagina delle squadre </h1>
-
-    <div class="row">
+     <div class="row">
         <div class="col-md-12">
             <table class="table table-striped">
                 <thead>
@@ -65,14 +40,21 @@ import TopBar from '@/components/TopBar.vue'
                 </tbody>
             </table>
         </div>
+         </div>
+        
+        <Footer/>
+       
     </div>
-        </div>
+    
 
 </template>
 
 
 <script>
-    import  db  from '../main.js';
+import TopBar from '@/components/TopBar.vue'
+import HeaderSquadre from '@/components/HeaderSquadre.vue'
+import Footer from '@/components/Footer.vue'
+import  db  from '../main.js';
     
     export default {
         data() {
@@ -99,6 +81,11 @@ import TopBar from '@/components/TopBar.vue'
                     })
                 });
         },
+        components:{
+            HeaderSquadre,
+            TopBar,
+            Footer,
+        }
         /*methods: {
             deleteUser(id){
               if (window.confirm("Do you really want to delete?")) {
@@ -114,8 +101,7 @@ import TopBar from '@/components/TopBar.vue'
     }
 </script>
 
-<style>
-
+<style scoped>
 .nav-link {
     padding:0px;
     margin: 10px;
@@ -127,6 +113,7 @@ import TopBar from '@/components/TopBar.vue'
     width: 50px;
     margin:  0px;
 }
+
 </style>
 
 

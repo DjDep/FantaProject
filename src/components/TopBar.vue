@@ -1,12 +1,11 @@
-<script setup>
-
+<script>
 </script>
 
 <template>
 <nav class="navbar navbar-expand-sm bg-success navbar-dark p-3">
   <!-- Brand -->
   <a class="navbar-brand" href="/">
-    <img alt="logo" class="logo" src="@/assets/logoApp.png" width="40" height="40" />
+    <img alt="logo" class="logo" src="@/assets/logoFP.png" width="80" height="80" />
   </a>
 
   <!-- Links -->
@@ -27,7 +26,7 @@
 </nav>
 </template>
 
-<style>
+<style scoped>
   a {
       color: white;
       text-decoration: none;

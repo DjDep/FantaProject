@@ -2,7 +2,6 @@
 import TopBar from '@/components/TopBar.vue'
 </script>
 
-<template>
     <div class="row">
         <TopBar />
         <div class="col-md-12">
@@ -47,9 +46,14 @@ import TopBar from '@/components/TopBar.vue'
             </table>
         </div>
     </div>
+    </div>
+    
 </template>
+
 <script>
-    import  db  from '../main.js';
+import TopBar from '@/components/TopBar.vue'
+import Footer from '@/components/Footer.vue'
+import  db  from '../main.js';
     
     export default {
         data() {
@@ -94,7 +98,7 @@ import TopBar from '@/components/TopBar.vue'
         }*/
     }
 </script>
-<style>
+<style scoped>
     .btn-primary {
         margin-right: 12px;
     }
