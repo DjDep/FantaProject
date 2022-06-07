@@ -1,7 +1,15 @@
-<script setup lang="ts">
+<!-- Home -->
+<script>
 import TheWelcome from '@/components/TheWelcome.vue'
-import Footerhome2 from '@/components/Footerhome2.vue'
+import Footer from '@/components/Footer.vue'
 import TopBar from '@/components/TopBar.vue'
+
+export default {
+  components: {
+    TopBar,
+    Footer,
+  }
+}
 </script>
 
 <template>
@@ -9,7 +17,7 @@ import TopBar from '@/components/TopBar.vue'
     <componentHeaderSquadre />
     <TopBar />
     <!--<TheWelcome />-->
-    <Footerhome2 />
+    <Footer />
     
   </main>
 </template>
