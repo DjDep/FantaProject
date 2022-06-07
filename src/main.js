@@ -3,7 +3,6 @@ import VueCompositionAPI, { createApp, h } from '@vue/composition-api'
 import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import 'bootstrap/dist/css/bootstrap.css';
-
 import firebase from 'firebase'
 
 import App from './App.vue'

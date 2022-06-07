@@ -5,11 +5,8 @@
 <nav class="navbar navbar-expand-sm bg-success navbar-dark p-3">
   <!-- Brand -->
   <a class="navbar-brand" href="/">
-    <img alt="logo" class="logo" src="@/assets/logoFP.png" width="80" height="80" />
-  </a>
-
   <!-- Links -->
-  <ul class="navbar-nav">
+  <ul>
     <li class="nav-item">
         <a class="nav-link"><router-link to="/list">Calciatori seria A</router-link></a>
     </li>
@@ -23,6 +20,7 @@
         <a class="nav-link"><router-link to="/account">il mio account</router-link></a>
     </li>
   </ul>
+  </a>
 </nav>
 </template>
 

@@ -14,10 +14,11 @@ export default {
 
 <template>
   <main>
-    <componentHeaderSquadre />
-    <TopBar />
-    <!--<TheWelcome />-->
+    <div>
+          <TopBar />
     <Footer />
+    </div>
+
     
   </main>
 </template>

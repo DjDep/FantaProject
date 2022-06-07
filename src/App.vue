@@ -1,5 +1,6 @@
 <script setup>
 import TopBar from '@/components/TopBar.vue'
+import LoginViewVue from './views/LoginView.vue';
 </script>
 
 <template>
@@ -9,9 +10,3 @@ import TopBar from '@/components/TopBar.vue'
     <router-view />
   </div>
 </template>
-<!--
-<style>
-@import '@/assets/base.css';
-
-</style>
--->
