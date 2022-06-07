@@ -1,5 +1,4 @@
-
-
+<!-- La mia Squadra-->
 <template>
 <div class="footbllers">
     <TopBar/>
