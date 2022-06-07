@@ -1,5 +1,5 @@
 <template><!-- Footer -->
-<footer class="text-center text-lg-start bg-light text-muted fixed-bottom">
+<footer class="text-center text-lg-start bg-light text-muted position-sticky">
   <!-- Section: Social media -->
   <section
     class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
@@ -79,16 +79,16 @@
             Link utili
           </h6>
           <p>
-            <a class="nav-link text-secondary"><router-link to="/list">Calciatori seria A</router-link></a>
+            <a class="nav-link footer-a"><router-link class="footer-link" to="/list">Calciatori seria A</router-link></a>
           </p>
           <p>
-            <a class="nav-link text-reset"><router-link to="/teams">Squadre</router-link></a>        
+            <a class="nav-link footer-a"><router-link class="footer-link" to="/teams">Squadre</router-link></a>        
           </p>
           <p>
-            <a class="nav-link text-reset"><router-link to="/account">Account</router-link></a>
+            <a class="nav-link footer-a"><router-link class="footer-link" to="/account">Account</router-link></a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Help</a>
+            <a class="nav-link footer-a"><router-link class="footer-link" to="/account">il mio account</router-link></a>
           </p>
         </div>
         <!-- Grid column -->
@@ -124,7 +124,7 @@
 <!-- Footer -->
 </template>
 
-<style>
+<style scoped>
 .logo{
     padding: 0px;
     margin:10px;
@@ -134,8 +134,9 @@
     margin:10px;
 
 }
-.nav-link,
-.text-reset{
+.footer-link {
     color: black;
+    margin:0px; 
+
 }
 </style>

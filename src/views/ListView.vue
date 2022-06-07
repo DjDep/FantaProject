@@ -1,17 +1,110 @@
-<script setup lang="ts">
-import TopBar from '@/components/TopBar.vue'
-import Footerhome2 from '@/components/Footerhome2.vue'
-</script>
-
 <template>
     
     <div class="footbllers">
     <TopBar />
         <h1>This is an about page</h1>
-        <Footerhome2 />
+        <Footer/>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>AnnodiNascita</th>
+                        <th>CognomeNome</th>
+                        <th>MediaFantavoto</th>
+                        <th>MediaVoto</th>
+                        <th>Cartoncino</th>
+                        <th>Squadra</th>
+                        <th>RC</th>
+                        <th>Ruolo Mantra</th>
+                        <th>Quotazione Attuale</th>
+                        <th>Quotazione Iniziale</th>
+                        <th>Piede</th>
+                        <th>Nazionalità</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="footballer in footballers" :key="footballer.key">
+                        <td>{{ footballer.AnnodiNascita }}</td>
+                        <td>{{ footballer.CognomeNome }}</td>
+                        <td>{{ footballer.MediaFantavoto }}</td>
+                        <td>{{ footballer.MediaVoto }}</td>
+                        <td><img :src="footballer.Cartoncino"> </td>
+                        <td>{{ footballer.Squadra }}</td>
+                        <td>{{ footballer.RC }}</td>
+                        <td>{{ footballer.RuoloM }}</td>
+                        <td>{{ footballer.QuotazioneAttuale }}</td>
+                        <td>{{ footballer.QuotazioneIniziale }}</td>
+                        <td>{{ footballer.Piede }}</td>
+                        <td>{{ footballer.Nazionalità }}</td>
+                        <td>
+                            <!--<router-link :to="{name: 'edit', params: { id: user.key }}" class="btn btn-primary">Edit
+                            </router-link>
+                           <button @click.prevent="deleteUser(user.key)" class="btn btn-danger">Delete</button>-->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
     </div>
     
 </template>
 
-<style>
+<script>
+import TopBar from '@/components/TopBar.vue'
+import Footer from '@/components/Footer.vue'
+import  db  from '../main.js';
+    
+    export default {
+        data() {
+            return {
+                footballers: []
+            }
+        },
+        created() {
+            db.collection('footballers').get().then(querySnapshot => {
+                querySnapshot.forEach(doc => {
+                  const data = {
+                    key: doc.id,
+                        'AnnodiNascita': doc.data()['Anno di nascita'],
+                        'CognomeNome': doc.data().CognomeNome,
+                        'MediaFantavoto': doc.data()['Media fantavoto'],
+                        'MediaVoto': doc.data()['Media voto'],
+                        'Cartoncino': doc.data().Cartoncino,
+                        'Squadra': doc.data().Squadra,
+                        'RC': doc.data().RC,
+                        'RuoloM': doc.data().RuoloM,
+                        'QuotazioneAttuale': doc.data().QuotazioneAttuale,
+                        'QuotazioneIniziale': doc.data().QuotazioneIniziale,
+                        'Piede': doc.data().Piede,
+                        'Nazionalità': doc.data().Nazionalità,
+                  }
+                     if(data.CognomeNome=='Sepe Luigi')console.log(doc.data())
+                   this.footballers.push(data)     
+                    })
+                });
+        },
+        /*methods: {
+            deleteUser(id){
+              if (window.confirm("Do you really want to delete?")) {
+                db.collection("users").doc(id).delete().then(() => {
+                    console.log("Document deleted!");
+                })
+                .catch((error) => {
+                    console.error(error);
+                })
+              }
+            }
+        }*/
+    }
+</script>
+<style scoped>
+    .btn-primary {
+        margin-right: 12px;
+    }
 </style>
+
+

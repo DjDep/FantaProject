@@ -1,5 +1,4 @@
-<script setup>
-
+<script>
 </script>
 
 <template>
@@ -23,40 +22,16 @@
     <li class="nav-item" id="prova2">
         <a class="nav-link"><router-link to="/account">il mio account</router-link></a>
     </li>
-
-    <!-- Dropdown -->
-    <!--<li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Dropdown link
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">impostazioni</a>
-        <a class="dropdown-item" href="#">il mio account</a>
-        <a class="dropdown-item" href="#">Logout</a>
-      </div>
-    </li>-->
-    
   </ul>
 </nav>
 </template>
 
-<style>
+<style scoped>
   a {
       color: white;
       text-decoration: none;
   }
   a:hover {
       color: #10BDE8;
-  }
-
-  #prova2 {
-    color: blue!important;
-  }
-  .logo{
-    margin:0px;
-    padding:5px;
-  }
-  .navbar-brand{
-    padding:0px;
   }
 </style>

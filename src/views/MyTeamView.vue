@@ -1,18 +1,26 @@
-<script setup lang="ts">
-import TopBar from '@/components/TopBar.vue'
-import Footerhome2 from '@/components/Footerhome2.vue'
-</script>
+
 
 <template>
 <div class="footbllers">
-    <TopBar />
+    <TopBar/>
         <h1>La mia squadra</h1>
     
-    <Footerhome2/>
+    <Footer/>
     </div>
 
 </template>
 
-<style>
+<style scoped>
   
 </style>
+<script>
+import TopBar from '../components/TopBar.vue'
+import Footer from '../components/Footer.vue'
+
+export default {
+    components:{
+        TopBar,
+        Footer,
+    }
+}
+</script>

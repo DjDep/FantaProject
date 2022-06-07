@@ -146,7 +146,7 @@
 
 </template>
 
-<style>
+<style scoped>
 footer{
     height: 33%;
     overflow: scroll;

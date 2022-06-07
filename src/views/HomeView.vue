@@ -13,3 +13,6 @@ import TopBar from '@/components/TopBar.vue'
     
   </main>
 </template>
+
+<style scoped>
+</style>
