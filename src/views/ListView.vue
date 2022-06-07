@@ -1,7 +1,5 @@
-<script setup >
-import TopBar from '@/components/TopBar.vue'
-</script>
-
+<!-- Calciatori serie A-->
+<template>
     <div class="row">
         <TopBar />
         <div class="col-md-12">
@@ -45,7 +43,7 @@ import TopBar from '@/components/TopBar.vue'
                 </tbody>
             </table>
         </div>
-    </div>
+        <Footer/>
     </div>
     
 </template>
@@ -84,6 +82,10 @@ import  db  from '../main.js';
                     })
                 });
         },
+        components:{
+            TopBar,
+            Footer,
+        }
         /*methods: {
             deleteUser(id){
               if (window.confirm("Do you really want to delete?")) {

@@ -1,4 +1,4 @@
-<!-- Calciatori Seria A-->
+<!-- SQUADRE-->
 <template>
     
     <div class="footbllers">
