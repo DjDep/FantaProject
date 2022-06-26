@@ -46,17 +46,17 @@
 
         <div class="col-lg-4 col-md-4 col-sm-12">
           <p>Dapit Damiano</p>
-          <a class="btn btn-primary" href="https://it.linkedin.com/in/damiano-dapit-309395188?original_referer=https%3A%2F%2Fwww.google.com%2F" role="button"target="blank"><i class="fab fa-linkedin-in"></i></a>
+          <a class="btn btn-primary" href="https://it.linkedin.com/in/damiano-dapit-309395188?original_referer=https%3A%2F%2Fwww.google.com%2F" role="button" target="blank"><i class="fab fa-linkedin-in"></i></a>
         </div> 
 
         <div class="col-lg-4 col-md-4 col-sm-12">
           <p>Mazzetto Matteo</p>
-          <a class="btn btn-primary" href="https://www.instagram.com/matteomazzetto_/" role="button"target="blank"><i class="fab fa-instagram"></i></a>
+          <a class="btn btn-primary" href="https://www.instagram.com/matteomazzetto_/" role="button" target="blank"><i class="fab fa-instagram"></i></a>
         </div> 
 
         <div class="col-lg-4 col-md-4 col-sm-12">
           <p>Favaro Mattia</p>
-          <a class="btn btn-primary" href="https://it.linkedin.com/in/mattia-favaro-30aa56227?trk=people-guest_people_search-card" role="button"target="blank"><i class="fab fa-linkedin-in"></i></a>
+          <a class="btn btn-primary" href="https://it.linkedin.com/in/mattia-favaro-30aa56227?trk=people-guest_people_search-card" role="button" target="blank"><i class="fab fa-linkedin-in"></i></a>
         </div> 
        </div>
       </div>
@@ -88,17 +88,17 @@
 
     
       <!--
-    <!-- Section: Social media 
+    Section: Social media 
     <section class="mb-4">
         <h5>Created by:</h5>
-      <!-- Instagram Matteo
+    Instagram Matteo
       <div class="creators">
       <p class="name-creators">Mazzetto Matteo
       <a class="btn btn-primary btn-floating m-1 social" href="https://www.instagram.com/matteomazzetto_/" role="button" target="blank"> <i class="fab fa-instagram"></i></a>
       </p>
       </div>
 
-      <!-- Linkedin Damiano e Mattia
+      Linkedin Damiano e Mattia
       <div class="creators">
       <p class="name-creators">Favaro Mattia
       <a class="btn btn-primary btn-floating m-1 social" href="https://it.linkedin.com/in/mattia-favaro-30aa56227?trk=people-guest_people_search-card" role="button"target="blank"><i class="fab fa-linkedin-in"></i></a>

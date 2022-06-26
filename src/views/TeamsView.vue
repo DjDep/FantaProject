@@ -4,9 +4,35 @@
     <div class="footballers">
 
     
-        <HeaderSquadre/>
+       
+
+    <TopBar />
+        <ul class="nav justify-content-center">
+        <li class="nav-item submenu-items">
+            <a class="nav-link submenu-itemHS">
+                <img class="iconHS" src="https://content.fantacalcio.it/web/img/team/atalanta.png" alt="Atalanta" href="#">
+            </a>
+        </li>
+        <li class="nav-item submenu-items">
+            <a class="nav-link">
+                <img class="iconHS" src="https://content.fantacalcio.it/web/img/team/bologna.png" alt="Bologna" href="#">
+            </a>
+        </li>
+        <li class="nav-item submenu-items">
+            <a class="nav-link">
+                <img class="iconHS" src="https://content.fantacalcio.it/web/img/team/venezia.png" alt="Venezia" href="#">
+            </a>
+        </li>
+        <li class="nav-item submenu-items">
+            <a class="nav-link">
+                <img class="iconHS" src="https://content.fantacalcio.it/web/img/team/salernitana.png" alt="Salernitana" href="#">
+            </a>
+        </li>
+        </ul>
         <h1>Squadre </h1>
         <h6>Campionato Serie A 2022/2023</h6>
+
+        <HeaderSquadre />
 
     <div class="row">
         <div class="col-md-12">
@@ -24,20 +50,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="team in teams" :key="team.key">
+                    <tr v-for="(team,index) in teams" :key="index">
                         <td><img class="Logo" :src="team.Logo"></td>
-                        <td id="Squadra">{{ team.Squadra }}</td>
+                        <td id="Squadra"><router-link :to="{name: 'teamsDetail', params: {id:team.key}}">{{ team.Squadra }}</router-link></td>
                         <td id="Allenatore">{{ team.Allenatore }}</td>
                         <td id="Stadio">{{ team.Stadio }}</td>
                         <td id="CapienzaStadio">{{ team.CapienzaStadio }}</td>
                         <td id="DataFondazione">{{ team.DataFondazione }}</td>
                         <td id="Info">{{ team.Info }}</td>
                         <td id="Classifica">{{ team.Classifica }}</td>
-                        <td>
-                            <!--<router-link :to="{name: 'edit', params: { id: user.key }}" class="btn btn-primary">Edit
-                            </router-link>
-                           <button @click.prevent="deleteUser(user.key)" class="btn btn-danger">Delete</button>-->
-                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -82,18 +103,7 @@ import  db  from '../main.js';
         components:{
             HeaderSquadre,
         }
-        /*methods: {
-            deleteUser(id){
-              if (window.confirm("Do you really want to delete?")) {
-                db.collection("users").doc(id).delete().then(() => {
-                    console.log("Document deleted!");
-                })
-                .catch((error) => {
-                    console.error(error);
-                })
-              }
-            }
-        }*/
+
     }
 </script>
 

@@ -7,9 +7,9 @@ const { resolve } = require('path');
 
 
 firebase.initializeApp({
-  apiKey: ["AIzaSyA3o5UL5TFEVqbAqX912ntJahznIqZK6Jo"],
-  authDomain: ["madama138.firebaseapp.com"],
-  projectId: ["madama138"]
+  apiKey: ["AIzaSyBGeRyBjE4PxkdH0wYhBYZc1tXZDdYZvlw"],
+  authDomain: ["fantaproject2-258ab.firebaseapp.com"],
+  projectId: ["fantaproject2-258ab"],
 });
 
 
