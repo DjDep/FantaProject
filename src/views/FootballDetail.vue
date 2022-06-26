@@ -19,7 +19,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="detail in Dettaglio" :key="detail.key">
+                    <tr v-for="detail in dettaglio" :key="detail.ID">
                         <td>{{ detail.AnnodiNascita }}</td>
                         <td>{{ detail.CognomeNome }}</td>
                         <td>{{ detail.MediaFantavoto }}</td>
@@ -32,11 +32,6 @@
                         <td>{{ detail.QuotazioneIniziale }}</td>
                         <td>{{ detail.Piede }}</td>
                         <td>{{ detail.Nazionalità }}</td>
-                        <td>
-                            <!--<router-link :to="{name: 'edit', params: { id: user.key }}" class="btn btn-primary">Edit
-                            </router-link>
-                           <button @click.prevent="deleteUser(user.key)" class="btn btn-danger">Delete</button>-->
-                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -49,16 +44,18 @@ export default {
     name: "detail",
     data: function () {
         return{
-            ID: this.$route.params.ID,
-            Dettaglio : []
+            id: this.$route.params.id,
+            dettaglio : []
         }
     },
 
 
  created() {
-            db.collection('footballers').doc(this.ID).get().then(doc => {
+    console.log(this.id)
+            db.collection('footballers').doc(this.id).get().then(doc => {
                   const data = {
-                    key: doc.id,
+                    //key: doc.id,
+                        'ID': doc.data().ID,
                         'AnnodiNascita': doc.data()['Anno di nascita'],
                         'CognomeNome': doc.data().CognomeNome,
                         'MediaFantavoto': doc.data()['Media fantavoto'],
@@ -72,8 +69,9 @@ export default {
                         'Piede': doc.data().Piede,
                         'Nazionalità': doc.data().Nazionalità,
                   }
-                   this.Dettaglio.push(data)     
-                    });
+            console.log("qualcosa")
+            this.dettaglio.push(data)     
+            });
         },
 }
 </script>

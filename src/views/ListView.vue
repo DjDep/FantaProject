@@ -1,7 +1,6 @@
-<script setup >
-import TopBar from '@/components/TopBar.vue'
-</script>
 
+
+<template>
     <div class="row">
         <TopBar />
         <div class="col-md-12">
@@ -23,9 +22,10 @@ import TopBar from '@/components/TopBar.vue'
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="footballer in footballers" :key="footballer.ID">
+                    <tr v-for="(footballer, index) in footballers" :key="index">
+                        <td>{{ footballer.ID }}</td>
                         <td>{{ footballer.AnnodiNascita }}</td>
-                        <td><router-link :to ="{name: 'detail', params: {id: footballer.ID}}">{{ footballer.CognomeNome }}</router-link></td>
+                        <td><router-link :to ="{name: 'detail', params: {id: footballer.key}}">{{ footballer.CognomeNome }}</router-link></td>
                         <td>{{ footballer.MediaFantavoto }}</td>
                         <td>{{ footballer.MediaVoto }}</td>
                         <td><img :src="footballer.Cartoncino"> </td>
@@ -36,23 +36,17 @@ import TopBar from '@/components/TopBar.vue'
                         <td>{{ footballer.QuotazioneIniziale }}</td>
                         <td>{{ footballer.Piede }}</td>
                         <td>{{ footballer.Nazionalità }}</td>
-                        <td>
-                            <!--<router-link :to="{name: 'edit', params: { id: user.key }}" class="btn btn-primary">Edit
-                            </router-link>
-                           <button @click.prevent="deleteUser(user.key)" class="btn btn-danger">Delete</button>-->
-                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-    </div>
-    
 </template>
 
-<script>
-import TopBar from '@/components/TopBar.vue'
-import Footer from '@/components/Footer.vue'
+<script lang="ts">
+import TopBar from '../components/TopBar.vue'
+import Footer from '../components/Footer.vue'
+
 import  db  from '../main.js';
     
     export default {
@@ -62,10 +56,11 @@ import  db  from '../main.js';
             }
         },
         created() {
-            db.collection('footballers').get().then(querySnapshot => {
+            db.collection('footballers').orderBy("RC", "desc").get().then(querySnapshot => {
                 querySnapshot.forEach(doc => {
                   const data = {
-                    //key: doc.id,
+                        key: doc.id,
+                        'ID': doc.data().ID,
                         'AnnodiNascita': doc.data()['Anno di nascita'],
                         'CognomeNome': doc.data().CognomeNome,
                         'MediaFantavoto': doc.data()['Media fantavoto'],
@@ -79,24 +74,18 @@ import  db  from '../main.js';
                         'Piede': doc.data().Piede,
                         'Nazionalità': doc.data().Nazionalità,
                   }
-                     if(data.CognomeNome=='Sepe Luigi')console.log(doc.data())
                    this.footballers.push(data)     
                     })
                 });
         },
-        /*methods: {
-            deleteUser(id){
-              if (window.confirm("Do you really want to delete?")) {
-                db.collection("users").doc(id).delete().then(() => {
-                    console.log("Document deleted!");
-                })
-                .catch((error) => {
-                    console.error(error);
-                })
-              }
-            }
-        }*/
+        
+        components:{
+        TopBar,
+        Footer,
     }
+    }
+
+
 </script>
 <style scoped>
     .btn-primary {
