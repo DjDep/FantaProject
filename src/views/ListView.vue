@@ -1,7 +1,6 @@
 <!-- Calciatori serie A-->
 <template>
     <div class="row">
-        <TopBar />
         <div class="col-md-12">
             <table class="table table-striped">
                 <thead>
@@ -43,14 +42,11 @@
                 </tbody>
             </table>
         </div>
-        <Footer/>
     </div>
     
 </template>
 
 <script>
-import TopBar from '@/components/TopBar.vue'
-import Footer from '@/components/Footer.vue'
 import  db  from '../main.js';
     
     export default {
@@ -82,10 +78,6 @@ import  db  from '../main.js';
                     })
                 });
         },
-        components:{
-            TopBar,
-            Footer,
-        }
         /*methods: {
             deleteUser(id){
               if (window.confirm("Do you really want to delete?")) {

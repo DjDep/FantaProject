@@ -20,6 +20,7 @@
     "bootstrap-icons": "^1.8.2",
     "bootstrap-vue": "^2.22.0",
     "firebase": "^8.10.1",
+    "save": "^2.5.0",
     "vue": "^2.6.14",
     "vue-router": "^3.5.3",
     "vuefire": "^2.2.5"

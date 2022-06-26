@@ -2,9 +2,14 @@
 <template>
   <div class="giulia">
     <div  class= "matteo" v-for="(squadra, index) in squadre" :key="index">
-    <img :src="squadra.Logo">
+    <div class="container-team">
+    <a href="#"  >
+     <img :src="squadra.Logo" :alt="squadra.Squadra" :title="squadra.Squadra">
+     </a>
+    </div>
     </div>
   </div>
+  
 
 </template>
 
@@ -32,13 +37,22 @@ export default {
                 });
 }
 }
+
 </script>
 
 
 <style scoped>
+.container-team{
+  margin: 5px 10px;
+  padding: 5px;
+  border: 5px;
+}
+.container-team:hover{
+  background-color: lightgreen;
+}
 img {
-    height: 60px;
-    width: 60px;
+    height: 55px;
+    width: 55px;
 
 }
 
@@ -49,12 +63,14 @@ img {
 .giulia{
     overflow: auto;
     white-space: nowrap;  
+    
 }
 
 
 div.scrollmenu a:hover {
   background-color: #777;
 }
+
 
 
 </style>

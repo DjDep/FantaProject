@@ -6,6 +6,7 @@ import ListView from '../views/ListView.vue'
 import TeamsView from '../views/TeamsView.vue'
 import MyTeamView from '../views/MyTeamView.vue'
 import AccountView from '../views/AccountView.vue'
+import 'bootstrap';
 
 
 Vue.use(VueRouter)

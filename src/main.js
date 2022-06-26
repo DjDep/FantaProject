@@ -3,6 +3,7 @@ import VueCompositionAPI, { createApp, h } from '@vue/composition-api'
 import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import 'bootstrap/dist/css/bootstrap.css';
+
 import firebase from 'firebase'
 
 import App from './App.vue'
@@ -10,14 +11,15 @@ import router from './router'
 Vue.use(BootstrapVue);
 
 
+
+
 const firebaseConfig = {
-  apiKey: "AIzaSyA3o5UL5TFEVqbAqX912ntJahznIqZK6Jo",
-  authDomain: "madama138.firebaseapp.com",
-  databaseURL: "https://madama138-default-rtdb.firebaseio.com",
-  projectId: "madama138",
-  storageBucket: "madama138.appspot.com",
-  messagingSenderId: "963846846243",
-  appId: "1:963846846243:web:03437be760909526677e96"
+  apiKey: "AIzaSyBGeRyBjE4PxkdH0wYhBYZc1tXZDdYZvlw",
+  authDomain: "fantaproject2-258ab.firebaseapp.com",
+  projectId: "fantaproject2-258ab",
+  storageBucket: "fantaproject2-258ab.appspot.com",
+  messagingSenderId: "1087411349932",
+  appId: "1:1087411349932:web:ed1b84c7bf2de58099b209"
 };
 
 firebase.initializeApp(firebaseConfig);

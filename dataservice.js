@@ -13,5 +13,5 @@ login: function (username) {
   },
   getUsername: function () {
     localStorage.getItem("username");
-  }
+  },
 };
