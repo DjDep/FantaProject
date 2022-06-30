@@ -3,8 +3,9 @@
   <div class="giulia">
     <div  class= "matteo" v-for="(squadra, index) in squadre" :key="index">
     <div class="container-team">
-    <a href="#"  >
-     <img :src="squadra.Logo" :alt="squadra.Squadra" :title="squadra.Squadra">
+
+    <a>
+     <router-link :to="{name: 'teamsDetail', params: {id:squadra.key}}"><img :src="squadra.Logo" :alt="squadra.Squadra" :title="squadra.Squadra"></router-link>
      </a>
     </div>
     </div>
