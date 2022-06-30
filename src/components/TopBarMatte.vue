@@ -7,52 +7,7 @@ import  db  from '../main.js';
 
 <template> <!-- Per redenderlo responsive provare a farlo come il footer, ovvero row e col, senza li e ul -->
 
-<!--
- <div class="nav-all"> <!--Tutta la navbar
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-
-  <section class="mb-4"> <!--Logo in alto a sx 
-      <a class="navbar-brand" href="/">
-      <img alt="logo" class="logo" src="@/assets/LogoFB.png" width="200" height="150" />
-     </a>
-    </section>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-     
-     <!-- Calciatori seria A
-      <li class="nav-item ">
-        <a ><router-link class="nav-link text-success" to="/list">Calciatori seria A</router-link></a>
-      </li>
-
-     <!-- Squadre 
-      <li class="nav-item ">
-        <a><router-link class="nav-link text-light" to="/teams">Squadre</router-link></a>
-      </li>
-      
-    <!-- La mia squadra 
-       <li class="nav-item ">
-       <a ><router-link class="nav-link" to="/myteam">La mia squadra</router-link></a>
-       </li>
-
-    <!-- il mio account 
-       <li class="nav-item ">
-       <a><router-link class="nav-link" to="/account">il mio account</router-link></a>
-       </li>
-    </ul>
-
-    <!-- RICERCA GIOCATORI/SQUADRE--
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-
-    </form>
-    
-  </div>
- </nav>
-
-</div>
--->
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
 <div class="container-fluid">
@@ -87,10 +42,6 @@ import  db  from '../main.js';
 
   </div>
 </div>
-
-
-
-  </button>
 
   <div class="collapse navbar-collapse" id="navbarContent">
     <ul class="navbar-nav mr-auto">
@@ -143,16 +94,16 @@ import  db  from '../main.js';
     </form>
   -->
   
-  <div class="search">
+   <!--<div class="search">
    <input type="text" placeholder="Search">
    <i class="fas fa-search" id="search-icon"></i>
    <div class="search-bx2">
-   <a class="img-search" href="#">
+  <a class="img-search" href="#">
     <img src="https://content.fantacalcio.it/web/img/team/roma.png" alt="">
    </a>
   
   </div>
-  </div>
+  </div>-->
 
   
 </div>
@@ -160,8 +111,7 @@ import  db  from '../main.js';
    
 
 </div>
-   </div>
-  </div>
+
 </nav>
 
 </template>
