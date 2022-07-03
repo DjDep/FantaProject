@@ -28,12 +28,6 @@ firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
 export default db
-/*Posso provare a usarlo come link per impostare un limite di footballers che si caricano
-curl 'https://[fantaproject2-258ab].firebaseio.com/users/jack/name.json' */
-
-//////////////////////////////////////////////////////////////////
-
-/////////////////////////////////////////////////////////////////////////
 
 Vue.use(VueCompositionAPI)
 

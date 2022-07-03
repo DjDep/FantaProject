@@ -63,59 +63,16 @@ methods: {
 
 <template> <!-- Per redenderlo responsive provare a farlo come il footer, ovvero row e col, senza li e ul -->
 
-<!--
- <div class="nav-all"> <!--Tutta la navbar
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-  <section class="mb-4"> <!--Logo in alto a sx 
-      <a class="navbar-brand" href="/">
-      <img alt="logo" class="logo" src="@/assets/LogoFB.png" width="200" height="150" />
-     </a>
-    </section>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-     
-     <!-- Calciatori seria A
-      <li class="nav-item ">
-        <a ><router-link class="nav-link text-success" to="/list">Calciatori seria A</router-link></a>
-      </li>
-
-     <!-- Squadre 
-      <li class="nav-item ">
-        <a><router-link class="nav-link text-light" to="/teams">Squadre</router-link></a>
-      </li>
-      
-    <!-- La mia squadra 
-       <li class="nav-item ">
-       <a ><router-link class="nav-link" to="/myteam">La mia squadra</router-link></a>
-       </li>
-
-    <!-- il mio account 
-       <li class="nav-item ">
-       <a><router-link class="nav-link" to="/account">il mio account</router-link></a>
-       </li>
-    </ul>
-
-    <!-- RICERCA GIOCATORI/SQUADRE--
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-
-    </form>
-    
-  </div>
- </nav>
-
-</div>
--->
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+<nav class="navbar navbar-expand-lg mainNavbar">
 <div class="container-fluid">
 
-  <a class="navbar-brand" href="#">
-   <img alt="logo" class="logo" src="@/assets/LogoFB.png" width="200" height="150" />
-  </a>
+  <router-link to="/">
+    <a class="navbar-brand">
+    <img alt="logo" class="logo" src="@/assets/LogoFB.png" width="200" height="150" />
+    </a>
+  </router-link>
 
 <!-- Menu a tendina quando lo schermo si rimpicciolisce -->
 <div class="dropdown btnposition ">
@@ -133,20 +90,12 @@ methods: {
         <a ><router-link class="dropdown-item" to="/list">Calciatori seria A</router-link></a>
       </li>
 
-  <li class="nav-item "> <!-- Il mio account -->
-       <a><router-link class="dropdown-item" to="/account">Account</router-link></a>
-       </li>
-
    <li class="nav-item "> <!-- Squadra -->
        <a ><router-link class="dropdown-item" to="/myteam">La mia squadra</router-link></a>
        </li>
 
   </div>
 </div>
-
-
-
-  </button>
 
   <div class="collapse navbar-collapse" id="navbarContent">
     <ul class="navbar-nav mr-auto">
@@ -156,30 +105,8 @@ methods: {
       </li>
 
       <li class="nav-item "> <!-- Squadre -->
-        <a><router-link class="nav-link text-light" to="/teams">Squadre</router-link></a>
+        <a><router-link class="nav-link" to="/teams">Squadre</router-link></a>
       </li>
-
-<!--
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
-        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Menù
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li class="dropdown-item "> 
-        <a><router-link class="dropdown-link text-light" to="/teams">Squadre</router-link></a>
-      </li>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      -->
-      
-      
-      <li class="nav-item "> <!-- Il mio account -->
-       <a><router-link class="nav-link" to="/account">Account</router-link></a>
-       </li>
 
        <li class="nav-item "> <!-- Squadra -->
        <a ><router-link class="nav-link" to="/myteam">La mia squadra</router-link></a>
@@ -187,56 +114,22 @@ methods: {
 
 
      </ul>
-    
-     
-<!--
-    <form class="d-flex navbar-item">
-    
-      <input class="form-control me-2" type="search" placeholder="Search" id="search" aria-label="Search" data-search>
-      
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    
-    </form>
-  -->
-
-  <!-- Search Bar -->
-  <input type="text" placeholder="Search">
-   <v-select 
-        :options="listone" 
-        
-        item-text="CognomeNome"
-        v-model="selected"/>
-   
-   <i class="fas fa-search" id="search-icon"></i>
-   <div class="search_bx2"
-   v-for="(my,index) in myTeam" :key="index">
-     <a class="a-search" href="#" >
-     <img class="img-search" :src="my.Cartoncino" :alt="my.CognomeNome">
-     
-      <h6> {{ my.CognomeNome }} </h6>
-      <p> {{my.Squadra}} </p> 
-     
-    </a>
-    </tbody>
-   </table>
-  
-  
-  </div>
-  </div>
-
   
 </div>
 
    
 
 </div>
-   </div>
-  </div>
+
 </nav>
 
 </template>
 
 <style scoped>
+
+.mainNavbar{
+  background-color: rgb(0, 135, 68);;
+}
 
 .btnposition{
   margin: 40px;
@@ -263,7 +156,7 @@ methods: {
 }
 .nav-link {
     margin:0px; 
-
+    color: #fff;
 }
 
 .navbar{

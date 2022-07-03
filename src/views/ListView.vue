@@ -49,7 +49,6 @@
 
 <script lang="ts">
 
-
 import  db  from '../main.js';
     
     export default {

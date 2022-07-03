@@ -46,7 +46,7 @@
 <template>
 
 <div class="footbllers">
-    
+    <!--<TopBar/>-->
         <h1 class="myTitle">La mia squadra</h1>
 
         <h5 class="insertTitle">Inserisci la tua squadra</h5>
@@ -70,14 +70,14 @@
             <button type="submit" @click="deleteUser(my.key)" class="btn btn-danger">Rimuovi calciatore</button>
       </div> 
     
-   
+    <!--<Footer/>-->
     </div>
 
 </template>
 
 
 <script lang="ts">
-
+import Footer from '../components/Footer.vue'
 
 import  db  from '../main.js';
 
@@ -190,7 +190,9 @@ beforeMount(){
   this.loadListone();
     this.readData()
  },
-   
+    components:{
+        Footer,
+    },
 
 
   
