@@ -46,7 +46,7 @@
 <template>
 
 <div class="footbllers">
-    <TopBar/>
+    
         <h1 class="myTitle">La mia squadra</h1>
 
         <h5 class="insertTitle">Inserisci la tua squadra</h5>
@@ -62,22 +62,22 @@
         <div 
         v-for="(my,index) in myTeam" :key="index" class="player"
         :class="{ 'Por': my.RC == 'P', 'Dif': my.RC == 'D','Cen': my.RC == 'C','Att': my.RC == 'A', }"> 
-          <p> <router-link :to ="{name: 'detail', params: {id: my.key}}">{{my.CognomeNome}} </router-link></p>
+          <!--<p> <router-link :to ="{name: 'detail', params: {id: my.key}}">{{my.CognomeNome}} </router-link>-->
+          <p> <router-link :to ="{name: 'detail', params: {id: my.key}}">{{ my.CognomeNome }}</router-link></p>
           <p> {{my.Squadra}}</p>  
           <p> {{my.RC}}</p>  
           <p> {{my.RuoloM}}</p>  
             <button type="submit" @click="deleteUser(my.key)" class="btn btn-danger">Rimuovi calciatore</button>
       </div> 
     
-    <Footer/>
+   
     </div>
 
 </template>
 
 
 <script lang="ts">
-import TopBar from '../components/TopBar.vue'
-import Footer from '../components/Footer.vue'
+
 
 import  db  from '../main.js';
 
@@ -190,10 +190,7 @@ beforeMount(){
   this.loadListone();
     this.readData()
  },
-    components:{
-        TopBar,
-        Footer,
-    },
+   
 
 
   

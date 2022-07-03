@@ -38,7 +38,7 @@
 </template>
 
 <script>
-    import db from '../main.js'
+import db from '../main.js'
 
 export default {
     name: "detail",
@@ -56,7 +56,7 @@ export default {
                   const data = {
                     //key: doc.id,
                         'ID': doc.data().ID,
-                        'AnnodiNascita': doc.data()['Anno di nascita'],
+                        'AnnodiNascita': doc.data()['Anno di nascita'].replace("00:00:00", ""),
                         'CognomeNome': doc.data().CognomeNome,
                         'MediaFantavoto': doc.data()['Media fantavoto'],
                         'MediaVoto': doc.data()['Media voto'],

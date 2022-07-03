@@ -1,38 +1,13 @@
 <!-- SQUADRE-->
 <template>
     
+
     <div class="footballers">
-
-    
-       
-
-    <TopBar />
-        <ul class="nav justify-content-center">
-        <li class="nav-item submenu-items">
-            <a class="nav-link submenu-itemHS">
-                <img class="iconHS" src="https://content.fantacalcio.it/web/img/team/atalanta.png" alt="Atalanta" href="#">
-            </a>
-        </li>
-        <li class="nav-item submenu-items">
-            <a class="nav-link">
-                <img class="iconHS" src="https://content.fantacalcio.it/web/img/team/bologna.png" alt="Bologna" href="#">
-            </a>
-        </li>
-        <li class="nav-item submenu-items">
-            <a class="nav-link">
-                <img class="iconHS" src="https://content.fantacalcio.it/web/img/team/venezia.png" alt="Venezia" href="#">
-            </a>
-        </li>
-        <li class="nav-item submenu-items">
-            <a class="nav-link">
-                <img class="iconHS" src="https://content.fantacalcio.it/web/img/team/salernitana.png" alt="Salernitana" href="#">
-            </a>
-        </li>
-        </ul>
+     <HeaderSquadre/>
         <h1>Squadre </h1>
-        <h6>Campionato Serie A 2022/2023</h6>
+        <h6>Campionato Serie A 2021/2022</h6>
 
-        <HeaderSquadre />
+       
 
     <div class="row">
         <div class="col-md-12">
@@ -72,8 +47,8 @@
 
 
 <script>
-import HeaderSquadre from '@/components/HeaderSquadre.vue'
 import  db  from '../main.js';
+import HeaderSquadre from '/src/components/HeaderSquadre.vue'
     
     export default {
         data() {
@@ -100,9 +75,10 @@ import  db  from '../main.js';
                     })
                 });
         },
-        components:{
-            HeaderSquadre,
-        }
+        components: {
+            HeaderSquadre
+        },
+       
 
     }
 </script>

@@ -1,7 +1,63 @@
-<script>
+<script lang="ts">
 //src= "script.js" defer 
 //import searchfootballers from '../script.js'
-import  db  from '../main.js';
+import db from '../main.js'
+
+export default {
+    name: "myTeam",
+  data: function () {
+    return{
+      myTeam: [],
+      dati:  {
+        CognomeNome: null,
+        squadra: null,
+      },
+      listone:[],
+      selected:null
+    }
+  },
+
+methods: {
+
+    getText(giocatore){
+      return `${giocatore.CognomeNome} - ${giocatore.Squadra} - ${giocatore.Squadra}`
+    },
+    loadListone(){
+              db.collection('footballers').orderBy("CognomeNome", "desc").get().then(querySnapshot => {
+                querySnapshot.forEach(doc => {
+                  const data = {
+                        key: doc.id,
+                        'ID': doc.data().ID,
+                        'CognomeNome': doc.data().CognomeNome,
+                        'Cartoncino': doc.data().Cartoncino,
+                        'Squadra': doc.data().Squadra,
+ì                  }           
+                   this.listone.push(data)   
+
+                    })
+                });
+    },
+
+    readData(){
+      db.collection('myTeam').get().then(querySnapshot => {
+        querySnapshot.forEach (doc =>  {
+          console.log(doc.data())
+          const data =  {
+            key: doc.id,
+            'ID': doc.data().ID,
+            'CognomeNome': doc.data().CognomeNome,
+            'Cartoncino': doc.data().Cartoncino,
+            'Squadra': doc.data().Squadra,
+          }
+          console.log("fdfdffd")
+          this.myTeam.push(data)      
+        })
+      }) 
+      },
+
+},
+}
+
 
 </script>
 
@@ -142,14 +198,28 @@ import  db  from '../main.js';
     
     </form>
   -->
-  
-  <div class="search">
-   <input type="text" placeholder="Search">
+
+  <!-- Search Bar -->
+  <input type="text" placeholder="Search">
+   <v-select 
+        :options="listone" 
+        
+        item-text="CognomeNome"
+        v-model="selected"/>
+   
    <i class="fas fa-search" id="search-icon"></i>
-   <div class="search-bx2">
-   <a class="img-search" href="#">
-    <img src="https://content.fantacalcio.it/web/img/team/roma.png" alt="">
-   </a>
+   <div class="search_bx2"
+   v-for="(my,index) in myTeam" :key="index">
+     <a class="a-search" href="#" >
+     <img class="img-search" :src="my.Cartoncino" :alt="my.CognomeNome">
+     
+      <h6> {{ my.CognomeNome }} </h6>
+      <p> {{my.Squadra}} </p> 
+     
+    </a>
+    </tbody>
+   </table>
+  
   
   </div>
   </div>
@@ -210,7 +280,7 @@ import  db  from '../main.js';
 
 }
 
- .search .search-bx2{
+ .search .search_bx2{
   position: absolute;
   width: 200px;
   height: 300px;
@@ -221,14 +291,42 @@ import  db  from '../main.js';
   border-radius:10px; 
 }
 
- .search .search-bx2 .img-search{
+ .search .search_bx2 .a-search{
    text-decoration: none;
    color: #fff;
-   width: 100px;
+   width: 100%;
    height: 50px;
+   /*border: 1px solid #fff;*/
+   display: flex;
+   align-items: center;
+   transition: .3s linear;
+}
+
+.search .search_bx2 .a-search:hover {
+   background: rgb(184, 184, 184, .6);
+}
+
+ .search .search_bx2 .a-search .img-search{
+   width: 55px;
+   height: 50px;
+   border-radius: 5px;
+   margin: 0px 5px
+}
+
+.search .search_bx2 .a-search .content2{
+   color: #fff;
+}
+
+.search .search_bx2 .a-search .content2 h6{
+   font-size: 13px;
 
 
-  
+}
+
+.search .search_bx2 .a-search .content2 p { 
+   color: rgb(255, 255, 255, .7);
+   font-size: 11px;
+   font-weight: 500;
 }
 
 
