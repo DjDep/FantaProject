@@ -76,7 +76,6 @@
 
 
 <script lang="ts">
-import TopBar from '../components/TopBar.vue'
 import Footer from '../components/Footer.vue'
 
 import  db  from '../main.js';
@@ -191,7 +190,6 @@ beforeMount(){
     this.readData()
  },
     components:{
-        TopBar,
         Footer,
     },
 

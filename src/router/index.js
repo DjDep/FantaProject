@@ -1,11 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import LoginView from '../views/LoginView.vue'
-import HomeView from '../views/HomeView.vue'
 import ListView from '../views/ListView.vue'
 import TeamsView from '../views/TeamsView.vue'
 import MyTeamView from '../views/MyTeamView.vue'
-import AccountView from '../views/AccountView.vue'
+import HomeView from "../views/HomeView.vue";
 import 'bootstrap';
 
 
@@ -17,19 +15,13 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
-      name: 'login',
-      component: () => import('../views/LoginView.vue')
+      component: () => import('../views/HomeView.vue')
     },
-    {
+    /*{
       path: '/home',
       name: 'home',
       component: () => import('../views/HomeView.vue')
-    },
-    {
-      path: '/about',
-      name: 'about',
-      component: () => import('../views/AboutView.vue')
-    },
+    },*/
     {
       path: '/list',
       name: 'list',
@@ -44,11 +36,6 @@ const router = new VueRouter({
       path: '/myteam',
       name: 'myteam',
       component: () => import('../views/MyTeamView.vue')
-    },
-    {
-      path: '/account',
-      name: 'account',
-      component: () => import('../views/AccountView.vue')
     },
     { 
       path: "/list/:id", 

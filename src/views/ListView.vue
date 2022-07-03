@@ -43,7 +43,6 @@
 </template>
 
 <script lang="ts">
-import TopBar from '../components/TopBar.vue'
 import Footer from '../components/Footer.vue'
 
 import  db  from '../main.js';
@@ -79,7 +78,6 @@ import  db  from '../main.js';
         },
         
         components:{
-        TopBar,
         Footer,
     }
     }

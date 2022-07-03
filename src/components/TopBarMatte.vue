@@ -9,12 +9,14 @@ import  db  from '../main.js';
 
 
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+<nav class="navbar navbar-expand-lg mainNavbar">
 <div class="container-fluid">
 
-  <a class="navbar-brand" href="#">
-   <img alt="logo" class="logo" src="@/assets/LogoFB.png" width="200" height="150" />
-  </a>
+  <router-link to="/">
+    <a class="navbar-brand">
+    <img alt="logo" class="logo" src="@/assets/LogoFB.png" width="200" height="150" />
+    </a>
+  </router-link>
 
 <!-- Menu a tendina quando lo schermo si rimpicciolisce -->
 <div class="dropdown btnposition ">
@@ -32,10 +34,6 @@ import  db  from '../main.js';
         <a ><router-link class="dropdown-item" to="/list">Calciatori seria A</router-link></a>
       </li>
 
-  <li class="nav-item "> <!-- Il mio account -->
-       <a><router-link class="dropdown-item" to="/account">Account</router-link></a>
-       </li>
-
    <li class="nav-item "> <!-- Squadra -->
        <a ><router-link class="dropdown-item" to="/myteam">La mia squadra</router-link></a>
        </li>
@@ -51,30 +49,8 @@ import  db  from '../main.js';
       </li>
 
       <li class="nav-item "> <!-- Squadre -->
-        <a><router-link class="nav-link text-light" to="/teams">Squadre</router-link></a>
+        <a><router-link class="nav-link" to="/teams">Squadre</router-link></a>
       </li>
-
-<!--
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
-        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Menù
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li class="dropdown-item "> 
-        <a><router-link class="dropdown-link text-light" to="/teams">Squadre</router-link></a>
-      </li>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      -->
-      
-      
-      <li class="nav-item "> <!-- Il mio account -->
-       <a><router-link class="nav-link" to="/account">Account</router-link></a>
-       </li>
 
        <li class="nav-item "> <!-- Squadra -->
        <a ><router-link class="nav-link" to="/myteam">La mia squadra</router-link></a>
@@ -82,29 +58,6 @@ import  db  from '../main.js';
 
 
      </ul>
-    
-     
-<!--
-    <form class="d-flex navbar-item">
-    
-      <input class="form-control me-2" type="search" placeholder="Search" id="search" aria-label="Search" data-search>
-      
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    
-    </form>
-  -->
-  
-   <!--<div class="search">
-   <input type="text" placeholder="Search">
-   <i class="fas fa-search" id="search-icon"></i>
-   <div class="search-bx2">
-  <a class="img-search" href="#">
-    <img src="https://content.fantacalcio.it/web/img/team/roma.png" alt="">
-   </a>
-  
-  </div>
-  </div>-->
-
   
 </div>
 
@@ -117,6 +70,10 @@ import  db  from '../main.js';
 </template>
 
 <style scoped>
+
+.mainNavbar{
+  background-color: rgb(0, 135, 68);;
+}
 
 .btnposition{
   margin: 40px;
@@ -143,7 +100,7 @@ import  db  from '../main.js';
 }
 .nav-link {
     margin:0px; 
-
+    color: #fff;
 }
 
 .navbar{
