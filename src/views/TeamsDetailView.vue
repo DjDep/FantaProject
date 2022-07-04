@@ -3,16 +3,13 @@
         <div class="col-md-12">
             <table class="table table-striped">
                 <thead>
-                    <tr>
-                        <th class="all">Logo</th>
-                        <th class="all">Squadra</th>
+                    <th class="all">Squadra</th>
                         <th class="all">Allenatore</th>
                         <th class="all">Stadio</th>
                         <th class="all">Capienza stadio</th>
                         <th class="all">Data di fondazione</th>
                         <th class="all">Info</th>
                         <th class="all">Classifica</th>
-                    </tr>
                 </thead>
                 <tbody>
                     <tr v-for="teamDetail in teamsDetail" :key="teamDetail.id">
@@ -72,3 +69,5 @@ import  db  from '../main.js';
 
     }
 </script>
+
+

@@ -51,7 +51,7 @@ import  db  from '../main.js';
       </li>
 
       <li class="nav-item "> <!-- Squadre -->
-        <a><router-link class="nav-link text-light" to="/teams">Squadre</router-link></a>
+        <a><router-link class="nav-link" to="/teams">Squadre</router-link></a>
       </li>
 
 <!--

@@ -6,35 +6,34 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>AnnodiNascita</th>
-                        <th>CognomeNome</th>
-                        <th>MediaFantavoto</th>
-                        <th>MediaVoto</th>
-                        <th>Cartoncino</th>
-                        <th>Squadra</th>
-                        <th>RC</th>
-                        <th>Ruolo Mantra</th>
-                        <th>Quotazione Attuale</th>
-                        <th>Quotazione Iniziale</th>
-                        <th>Piede</th>
-                        <th>Nazionalità</th>
+                        <th class="list">Cartoncino</th>
+                        <th class="list">Cognome & Nome</th>
+                        <th class="list">Anno Di Nascita</th>
+                        <th class="list">Squadra</th>
+                        <th class="list">Nazionalità</th>
+                        <th class="list">Piede</th>
+                        <th class="list">Media Fantavoto</th>
+                        <th class="list">Media Voto</th>
+                        <th class="list">RC</th>
+                        <th class="list">Ruolo Mantra</th>
+                        <th class="list">Quotazione Attuale</th>
+                        <th class="list">Quotazione Iniziale</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="(footballer, index) in footballers" :key="index">
-                        <td>{{ footballer.ID }}</td>
-                        <td>{{ footballer.AnnodiNascita }}</td>
-                        <td><router-link :to ="{name: 'detail', params: {id: footballer.key}}">{{ footballer.CognomeNome }}</router-link></td>
-                        <td>{{ footballer.MediaFantavoto }}</td>
-                        <td>{{ footballer.MediaVoto }}</td>
-                        <td><img :src="footballer.Cartoncino"> </td>
-                        <td>{{ footballer.Squadra }}</td>
-                        <td>{{ footballer.RC }}</td>
-                        <td>{{ footballer.RuoloM }}</td>
-                        <td>{{ footballer.QuotazioneAttuale }}</td>
-                        <td>{{ footballer.QuotazioneIniziale }}</td>
-                        <td>{{ footballer.Piede }}</td>
-                        <td>{{ footballer.Nazionalità }}</td>
+                        <td><img class="Cartoncino" :src="footballer.Cartoncino"> </td>
+                        <td class="Nome"><router-link :to ="{name: 'detail', params: {id: footballer.key}}">{{ footballer.CognomeNome }}</router-link></td>
+                        <td class="list2">{{ footballer.AnnodiNascita }}</td>
+                        <td class="list2">{{ footballer.Squadra }}</td>
+                        <td class="list2">{{ footballer.Nazionalità }}</td>
+                        <td class="list2">{{ footballer.Piede }}</td>
+                        <td class="list2">{{ footballer.MediaFantavoto }}</td>
+                        <td class="list2">{{ footballer.MediaVoto }}</td>
+                        <td class="list2">{{ footballer.RC }}</td>
+                        <td class="list2">{{ footballer.RuoloM }}</td>
+                        <td class="list2">{{ footballer.QuotazioneAttuale }}</td>
+                        <td class="list2">{{ footballer.QuotazioneIniziale }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -60,18 +59,18 @@ import  db  from '../main.js';
                   const data = {
                         key: doc.id,
                         'ID': doc.data().ID,
-                        'AnnodiNascita': doc.data()['Anno di nascita'],
+                        'Cartoncino': doc.data().Cartoncino,
                         'CognomeNome': doc.data().CognomeNome,
+                        'AnnodiNascita': doc.data()['Anno di nascita'],
+                        'Squadra': doc.data().Squadra,
+                        'Nazionalità': doc.data().Nazionalità,
+                        'Piede': doc.data().Piede,
                         'MediaFantavoto': doc.data()['Media fantavoto'],
                         'MediaVoto': doc.data()['Media voto'],
-                        'Cartoncino': doc.data().Cartoncino,
-                        'Squadra': doc.data().Squadra,
                         'RC': doc.data().RC,
                         'RuoloM': doc.data().RuoloM,
                         'QuotazioneAttuale': doc.data().QuotazioneAttuale,
                         'QuotazioneIniziale': doc.data().QuotazioneIniziale,
-                        'Piede': doc.data().Piede,
-                        'Nazionalità': doc.data().Nazionalità,
                   }
                    this.footballers.push(data)     
                     })
@@ -89,6 +88,26 @@ import  db  from '../main.js';
 <style scoped>
     .btn-primary {
         margin-right: 12px;
+        border-bottom: 3px;
+    }
+
+    .Cartoncino{
+          height: 150px;
+          width: 120px;
+    }
+
+    .list{
+        text-align: center;
+        color: green;
+    }
+
+    .list2{
+        text-align: center;
+    }
+
+    .Nome{
+        text-align: center;
+
     }
 </style>
 
