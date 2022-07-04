@@ -17,11 +17,6 @@ const router = new VueRouter({
       path: '/',
       component: () => import('../views/HomeView.vue')
     },
-    /*{
-      path: '/home',
-      name: 'home',
-      component: () => import('../views/HomeView.vue')
-    },*/
     {
       path: '/list',
       name: 'list',

@@ -1,7 +1,7 @@
 <template>
-    <div class="container">
+    <div class="container text-center mx-auto homeContainer">
         <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="col-lg-4 col-md-6 col-sm-12 mx-auto">
                 <div class="card homeCards">
                     <img src="@/campioncinoListone.png" class="card-img-top homeImage" alt="Listone">
                     <div class="card-body">
@@ -11,7 +11,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="col-lg-4 col-md-6 col-sm-12 mx-auto">
                 <div class="card homeCards">
                     <img src="@/logoSerieA.png" class="card-img-top homeImage" alt="Squadre serie A">
                     <div class="card-body">
@@ -21,7 +21,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="col-lg-4 col-md-6 col-sm-12 mx-auto">
                 <div class="card homeCards">
                     <img src="@/PalloneSerieA.png" class="homeImage" alt="La mia squadra">
                     <div class="card-body">
@@ -40,12 +40,14 @@ import db from '../main.js'
 
 export default {
     name: "home",
-
     }
 
 </script>
 
 <style scoped>
+    .homeContainer{
+        width:100%;
+    }
     .homeImage {
         height: 20rem;
         width: 14rem;

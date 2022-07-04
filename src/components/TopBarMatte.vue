@@ -1,6 +1,4 @@
 <script lang="ts">
-//src= "script.js" defer 
-//import searchfootballers from '../script.js'
 import db from '../main.js'
 
 export default {
@@ -31,7 +29,7 @@ methods: {
                         'CognomeNome': doc.data().CognomeNome,
                         'Cartoncino': doc.data().Cartoncino,
                         'Squadra': doc.data().Squadra,
-ì                  }           
+                  }           
                    this.listone.push(data)   
 
                     })
@@ -53,80 +51,62 @@ methods: {
           this.myTeam.push(data)      
         })
       }) 
-      },
+    },
 
 },
 }
 
-
 </script>
 
-<template> <!-- Per redenderlo responsive provare a farlo come il footer, ovvero row e col, senza li e ul -->
-
-
+<template>
 
 <nav class="navbar navbar-expand-lg mainNavbar">
-<div class="container-fluid">
+  <div class="container-fluid text-center">
 
-  <router-link to="/">
-    <a class="navbar-brand">
-    <img alt="logo" class="logo" src="@/assets/LogoFB.png" width="200" height="150" />
-    </a>
-  </router-link>
+    <router-link to="/">
+      <a class="navbar-brand">
+      <img alt="logo" class="logo" src="@/assets/LogoFB.png" width="200" height="150" />
+      </a>
+    </router-link>
 
-<!-- Menu a tendina quando lo schermo si rimpicciolisce -->
-<div class="dropdown btnposition ">
-  <button class="navbar-toggler btnmenu btn btn-success dropdown-toggle text-light" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-   Menù
-  </button>
+  <!-- Menu dropdown quando lo schermo schende sotto i 992px -->
+    <div class="dropdown btnposition ">
+        <button class="navbar-toggler btnmenu btn btn-success dropdown-toggle text-light" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          Menù
+        </button>
 
-    <div class="dropdown-menu container-fluid">
+      <div class="dropdown-menu container-fluid">
+        <li class="nav-item "> <!-- Squadre -->
+          <a><router-link class="dropdown-item" to="/teams">Squadre</router-link></a>
+        </li>
+        <li class="nav-item "> <!-- Calciatori Seria A -->
+          <a ><router-link class="dropdown-item" to="/list">Calciatori seria A</router-link></a>
+        </li>
+        <li class="nav-item "> <!-- Squadra -->
+          <a ><router-link class="dropdown-item" to="/myteam">La mia squadra</router-link></a>
+        </li>
+      </div>
+    </div>
 
-  <li class="nav-item "> <!-- Squadre -->
-        <a><router-link class="dropdown-item" to="/teams">Squadre</router-link></a>
-      </li>
-      
-  <li class="nav-item "> <!-- Calciatori Seria A -->
-        <a ><router-link class="dropdown-item" to="/list">Calciatori seria A</router-link></a>
-      </li>
-
-   <li class="nav-item "> <!-- Squadra -->
-       <a ><router-link class="dropdown-item" to="/myteam">La mia squadra</router-link></a>
-       </li>
-
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item "> <!-- Calciatori Seria A -->
+            <a ><router-link class="nav-link" to="/list">Calciatori seria A</router-link></a>
+          </li>
+          <li class="nav-item "> <!-- Squadre -->
+            <a><router-link class="nav-link" to="/teams">Squadre</router-link></a>
+          </li>
+          <li class="nav-item "> <!-- Squadra -->
+            <a ><router-link class="nav-link" to="/myteam">La mia squadra</router-link></a>
+          </li>
+        </ul>
+      </div>
   </div>
-</div>
-
-  <div class="collapse navbar-collapse" id="navbarContent">
-    <ul class="navbar-nav mr-auto">
-
-      <li class="nav-item "> <!-- Calciatori Seria A -->
-        <a ><router-link class="nav-link" id="navbarContent" to="/list">Calciatori seria A</router-link></a>
-      </li>
-
-      <li class="nav-item "> <!-- Squadre -->
-        <a><router-link class="nav-link" to="/teams">Squadre</router-link></a>
-      </li>
-
-       <li class="nav-item "> <!-- Squadra -->
-       <a ><router-link class="nav-link" to="/myteam">La mia squadra</router-link></a>
-       </li>
-
-
-     </ul>
-  
-</div>
-
-   
-
-</div>
-
 </nav>
 
 </template>
 
 <style scoped>
-
 .mainNavbar{
   background-color: rgb(0, 135, 68);;
 }
@@ -161,23 +141,18 @@ methods: {
 
 .navbar{
     padding: 0px;
-    padding: 0px;
 }
 
 .search {
   position: relative;
-  /*align-item: center;*/
   position: flex;
   color: #fff;
-
-
 }
 
  .search .search_bx2{
   position: absolute;
   width: 200px;
   height: 300px;
-  /*border: 1px solid #fff;*/
   top: 35px;
   left: -10px;
   background: rgb(184, 184, 184, .3);
@@ -189,7 +164,6 @@ methods: {
    color: #fff;
    width: 100%;
    height: 50px;
-   /*border: 1px solid #fff;*/
    display: flex;
    align-items: center;
    transition: .3s linear;
@@ -212,8 +186,6 @@ methods: {
 
 .search .search_bx2 .a-search .content2 h6{
    font-size: 13px;
-
-
 }
 
 .search .search_bx2 .a-search .content2 p { 
@@ -221,7 +193,6 @@ methods: {
    font-size: 11px;
    font-weight: 500;
 }
-
 
 </style>
 
