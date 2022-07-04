@@ -1,9 +1,9 @@
 
-
 <template>
+<div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <table class="table table-striped">
+        <div class="col-lg-12 col-md-8 col-sm-6">
+            <table class="table table-striped table-fixed">
                 <thead>
                     <tr>
                         <th class="list">Cartoncino</th>
@@ -21,47 +21,57 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="(footballer, index) in footballers" :key="index">
-                        <td><img class="Cartoncino" :src="footballer.Cartoncino"> </td>
-                        <td class="Nome"><router-link :to ="{name: 'detail', params: {id: footballer.key}}">{{ footballer.CognomeNome }}</router-link></td>
-                        <td class="list2">{{ footballer.AnnodiNascita }}</td>
-                        <td class="list2">{{ footballer.Squadra }}</td>
-                        <td class="list2">{{ footballer.Nazionalità }}</td>
-                        <td class="list2">{{ footballer.Piede }}</td>
-                        <td class="list2">{{ footballer.MediaFantavoto }}</td>
-                        <td class="list2">{{ footballer.MediaVoto }}</td>
-                        <td class="list2">{{ footballer.RC }}</td>
-                        <td class="list2">{{ footballer.RuoloM }}</td>
-                        <td class="list2">{{ footballer.QuotazioneAttuale }}</td>
-                        <td class="list2">{{ footballer.QuotazioneIniziale }}</td>
+                    <tr v-for="(footballer, index) in footballersLoaded" :key="index">
+                        <td>{{ footballer.AnnodiNascita }} </td>
+                        <td><router-link :to ="{name: 'detail', params: {id: footballer.key}}">{{ footballer.CognomeNome }}</router-link></td>
+                        <td>{{ footballer.MediaFantavoto }}</td>
+                        <td>{{ footballer.MediaVoto }}</td>
+                        <td><img :src="footballer.Cartoncino"> </td>
+                        <td>{{ footballer.Squadra }}</td>
+                        <td>{{ footballer.RC }}</td>
+                        <td>{{ footballer.RuoloM }}</td>
+                        <td>{{ footballer.QuotazioneAttuale }}</td>
+                        <td>{{ footballer.QuotazioneIniziale }}</td>
+                        <td>{{ footballer.Piede }}</td>
+                        <td>{{ footballer.Nazionalità }}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
+
+  <b-button 
+  class="load-button" 
+  @click="loadMore" 
+  variant="success"
+  >
+    Carica altri giocatori
+  </b-button>
+
+  </div>
+
 </template>
 
-<script lang="ts">
-import TopBar from '../components/TopBar.vue'
-import Footer from '../components/Footer.vue'
-
+ <script lang="ts">
 import  db  from '../main.js';
-    
-    export default {
-        data() {
-            return {
-                footballers: []
-            }
-        },
-        created() {
+
+export default {
+  
+  data() {
+    return {
+      footballers: [],
+      length: 10
+    };
+  },
+  created() {
             db.collection('footballers').orderBy("RC", "desc").get().then(querySnapshot => {
                 querySnapshot.forEach(doc => {
                   const data = {
                         key: doc.id,
                         'ID': doc.data().ID,
                         'Cartoncino': doc.data().Cartoncino,
+                        'AnnodiNascita': doc.data()['Anno di nascita'].replace("00:00:00", ""),
                         'CognomeNome': doc.data().CognomeNome,
-                        'AnnodiNascita': doc.data()['Anno di nascita'],
                         'Squadra': doc.data().Squadra,
                         'Nazionalità': doc.data().Nazionalità,
                         'Piede': doc.data().Piede,
@@ -72,19 +82,25 @@ import  db  from '../main.js';
                         'QuotazioneAttuale': doc.data().QuotazioneAttuale,
                         'QuotazioneIniziale': doc.data().QuotazioneIniziale,
                   }
-                   this.footballers.push(data)     
+                   this.footballers.push(data)  
+                     
                     })
                 });
         },
-        
-        components:{
-        TopBar,
-        Footer,
-    }
-    }
-
-
+  methods: {
+    loadMore() {
+      if (this.length > this.footballers.length) return;
+      this.length = this.length + 10;
+    },
+  },
+  computed: {
+    footballersLoaded() {
+      return this.footballers.slice(0, this.length);
+    },
+  },
+};
 </script>
+
 <style scoped>
     .btn-primary {
         margin-right: 12px;
@@ -109,6 +125,12 @@ import  db  from '../main.js';
         text-align: center;
 
     }
+
+    .load-button{
+      margin: 40px;
+    }
 </style>
+
+
 
 

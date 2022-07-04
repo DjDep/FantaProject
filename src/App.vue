@@ -12,8 +12,8 @@ export default {
 
 <template>
   <div id="app">
-  <TopBarMatte/>
-  <router-view/>
-  <Footer/>
+    <TopBarMatte/>
+    <router-view/>
+    <Footer/>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
- <div class="row">
+    <div class="row">
         <div class="col-md-12">
             <table class="table table-striped">
                 <thead>
@@ -29,7 +29,6 @@
 </template>
 
 <script>
-import TopBar from '@/components/TopBar.vue'
 import HeaderSquadre from '@/components/HeaderSquadre.vue'
 import Footer from '@/components/Footer.vue'
 import  db  from '../main.js';
@@ -63,10 +62,8 @@ import  db  from '../main.js';
         },
         components:{
             HeaderSquadre,
-            TopBar,
             Footer,
         }
-
     }
 </script>
 

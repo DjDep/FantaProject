@@ -1,82 +1,31 @@
-<!-- La mia Squadra-->
-<style scoped>
-  @import 'vue-select/dist/vue-select.css';
-
-  .player {
-    margin: 30px;
-    padding: 20px;
-    border-radius: 8px;
-    display:flex;
-    flex-direction:row;
-    align-items:center;
-    justify-content: space-between;
-  }
-
-  .footballers {
-    margin: 10px;
-  }
-
-  .myTitle {
-    margin: 10px;
-  }
-
-  .insertForm {
-    margin: 10px;
-  }
-
-  .insertTitle {
-    margin: 10px;
-  }
-  .Por{
-    background-color:orange;
-  }
-  .Dif{
-    background-color:#a5d6a7;
-  }
-  .Cen{
-    background-color:#80deea;
-  }
-  .Att{
-    background-color:#ef9a9a;
-  }
-  .myTeam {
-    margin: 30px;
-  }
-</style>
+<!--Elenco giocatori aggiunti alla propria squadra-->
 <template>
-
-<div class="footbllers">
-    <!--<TopBar/>-->
-        <h1 class="myTitle">La mia squadra</h1>
-
-        <h5 class="insertTitle">Inserisci la tua squadra</h5>
+  <div class="footballers">
+    <h1 class="myTitle">La mia squadra</h1>
+      <h5 class="insertTitle">Inserisci la tua squadra</h5>
+      <!--vue select per scegliere all'interno del listone un giocatore da aggiungere-->
         <v-select 
         :options="listone" 
         :getOptionLabel="getText"
         item-text="CognomeNome"
         v-model="selected"/>
-        <button @click="saveData" class="btn btn-primary">Inserisci</button>
-
-
+      <!--button per salvare i dati al click-->
+      <button @click="saveData" class="btn btn-primary">Inserisci</button>
     <h3 class="myTeam">La mia squadra</h3>         
-        <div 
+      <div 
         v-for="(my,index) in myTeam" :key="index" class="player"
         :class="{ 'Por': my.RC == 'P', 'Dif': my.RC == 'D','Cen': my.RC == 'C','Att': my.RC == 'A', }"> 
-          <p> <router-link :to ="{name: 'detail', params: {id: my.key}}">{{my.CognomeNome}} </router-link></p>
+          <p> <router-link :to ="{name: 'detail', params: {id: my.key}}">{{ my.CognomeNome }}</router-link></p>
           <p> {{my.Squadra}}</p>  
           <p> {{my.RC}}</p>  
           <p> {{my.RuoloM}}</p>  
-            <button type="submit" @click="deleteUser(my.key)" class="btn btn-danger">Rimuovi calciatore</button>
+          <button type="submit" @click="deleteUser(my.key)" class="btn btn-danger">Rimuovi calciatore</button>
       </div> 
-    
-    <!--<Footer/>-->
-    </div>
-
+  </div>
 </template>
 
 
 <script lang="ts">
-import TopBar from '../components/TopBar.vue'
 import Footer from '../components/Footer.vue'
 
 import  db  from '../main.js';
@@ -191,11 +140,52 @@ beforeMount(){
     this.readData()
  },
     components:{
-        TopBar,
         Footer,
     },
-
-
-  
 }
 </script>
+
+<style scoped>
+  @import 'vue-select/dist/vue-select.css';
+
+  .player {
+    margin: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content: space-between;
+  }
+
+  .footballers {
+    margin: 10px;
+  }
+
+  .myTitle {
+    margin: 10px;
+  }
+
+  .insertForm {
+    margin: 10px;
+  }
+
+  .insertTitle {
+    margin: 10px;
+  }
+  .Por{
+    background-color:orange;
+  }
+  .Dif{
+    background-color:#a5d6a7;
+  }
+  .Cen{
+    background-color:#80deea;
+  }
+  .Att{
+    background-color:#ef9a9a;
+  }
+  .myTeam {
+    margin: 30px;
+  }
+</style>
