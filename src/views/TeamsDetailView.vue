@@ -1,15 +1,16 @@
 <template>
-    <div class="row">
+    <!--<div class="row">
         <div class="col-md-12">
             <table class="table table-striped">
                 <thead>
+                    <th class="all">Logo</th>
                     <th class="all">Squadra</th>
-                        <th class="all">Allenatore</th>
-                        <th class="all">Stadio</th>
-                        <th class="all">Capienza stadio</th>
-                        <th class="all">Data di fondazione</th>
-                        <th class="all">Info</th>
-                        <th class="all">Classifica</th>
+                    <th class="all">Allenatore</th>
+                    <th class="all">Stadio</th>
+                    <th class="all">Capienza stadio</th>
+                    <th class="all">Data di fondazione</th>
+                    <th class="all">Info</th>
+                    <th class="all">Classifica</th>
                 </thead>
                 <tbody>
                     <tr v-for="teamDetail in teamsDetail" :key="teamDetail.id">
@@ -25,7 +26,41 @@
                 </tbody>
             </table>
         </div>
+    </div>-->
+
+
+    <div class="container">
+        <HeaderSquadre/>
+        <h1>Squadre </h1>
+        <h6>Campionato Serie A 2021/2022</h6>
+        <div class="row">
+            <div class="col-lg-12">
+                    <div class="row header" v-if="windowWidth>=800">
+                        <div class="list col-xl-1 col-md-3 col-sm-6">Logo</div>
+                        <div class="list col-xl-1 col-md-3 col-sm-6">Squadra</div>
+                        <div class="list col-xl-1 col-md-3 col-sm-6">Allenatore</div>
+                        <div class="list col-xl-1 col-md-3 col-sm-6">Stadio</div>
+                        <div class="list col-xl-1 col-md-3 col-sm-6">Capienza stadio</div>
+                        <div class="list col-xl-1 col-md-3 col-sm-6">Data fondazione</div>
+                        <div class="list col-xl-1 col-md-3 col-sm-6">Info</div>
+                        <div class="list col-xl-1 col-md-3 col-sm-6">Classifica</div>
+                    </div>
+                    <div>
+                        <div class="row playerRow" v-for="teamDetail in teamsDetail" :key="teamDetail.id">
+                            <div class="col-lg-1 col-md-3 col-sm-6"><img class="logo" :src="teamDetail.Logo"></div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Squadra: </span>{{ teamDetail.Squadra }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Allenatore: </span>{{ teamDetail.Allenatore }} </div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Stadio: </span>{{ teamDetail.Stadio }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Capienza stadio: </span>{{ teamDetail.CapienzaStadio }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Data fondazione: </span>{{ teamDetail.DataFondazione }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Info: </span>{{ teamDetail.Info }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Classifica: </span>{{ teamDetail.Classifica }}</div>
+                        </div>
+                    </div>
+            </div>
+        </div>
     </div>
+
 </template>
 
 <script>
@@ -38,7 +73,8 @@ import  db  from '../main.js';
             data: function () {
                 return{
                     id: this.$route.params.id,
-                    teamsDetail : []
+                    teamsDetail : [],
+                    windowWidth:window.innerWidth
                 }
             },
         created() {
@@ -60,6 +96,20 @@ import  db  from '../main.js';
                    this.teamsDetail.push(data) 
                 })
         },
+
+    onResize() {
+      this.windowWidth = window.innerWidth
+    },
+
+    mounted() {
+        this.$nextTick(() => {
+        window.addEventListener('resize', this.onResize);
+        })
+    },
+
+    beforeDestroy() { 
+        window.removeEventListener('resize', this.onResize); 
+    },
         components:{
             HeaderSquadre,
             Footer,
@@ -67,4 +117,45 @@ import  db  from '../main.js';
     }
 </script>
 
+<style scoped>
+.container{
+    max-width:100%;
+    padding:0.5%;
+}
+
+.playerRow{
+  border-bottom:1px solid black;
+  text-align:center;
+}
+.header{
+    border-bottom:1px solid black;
+    text-align:center;
+    font-weight:bold;
+}
+
+    .row{
+      display:flex;
+      flex-direction:row;
+      width:100%;
+    }
+
+
+.logo {
+    height: 50px;
+    width: 50px;
+}
+
+.tableTitle {
+    text-align: center;
+    color: green;
+}
+
+.list{
+    text-align: center;
+    color: green;
+}
+.tableData {
+    text-align: center;
+}
+</style>
 

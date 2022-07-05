@@ -2,41 +2,37 @@
 <template>
 <div class="container">
     <div class="row">
-        <div class="col-lg-12 col-md-8 col-sm-6">
-            <table class="table table-striped table-fixed">
-                <thead>
-                    <tr>
-                        <th class="list">Cartoncino</th>
-                        <th class="list">Cognome & Nome</th>
-                        <th class="list">Anno Di Nascita</th>
-                        <th class="list">Squadra</th>
-                        <th class="list">Nazionalità</th>
-                        <th class="list">Piede</th>
-                        <th class="list">Media Fantavoto</th>
-                        <th class="list">Media Voto</th>
-                        <th class="list">RC</th>
-                        <th class="list">Ruolo Mantra</th>
-                        <th class="list">Quotazione Attuale</th>
-                        <th class="list">Quotazione Iniziale</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="(footballer, index) in footballersLoaded" :key="index">
-                        <td>{{ footballer.AnnodiNascita }} </td>
-                        <td><router-link :to ="{name: 'detail', params: {id: footballer.key}}">{{ footballer.CognomeNome }}</router-link></td>
-                        <td>{{ footballer.MediaFantavoto }}</td>
-                        <td>{{ footballer.MediaVoto }}</td>
-                        <td><img :src="footballer.Cartoncino"> </td>
-                        <td>{{ footballer.Squadra }}</td>
-                        <td>{{ footballer.RC }}</td>
-                        <td>{{ footballer.RuoloM }}</td>
-                        <td>{{ footballer.QuotazioneAttuale }}</td>
-                        <td>{{ footballer.QuotazioneIniziale }}</td>
-                        <td>{{ footballer.Piede }}</td>
-                        <td>{{ footballer.Nazionalità }}</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="col-lg-12">
+                <div class="row header" v-if="windowWidth>=800">
+                    <div class="list col-xl-1 col-md-3 col-sm-6">Cartoncino</div>
+                    <div class="list col-xl-1 col-md-3 col-sm-6">Cognome & Nome</div>
+                    <div class="list col-xl-1 col-md-3 col-sm-6">Anno Di Nascita</div>
+                    <div class="list col-xl-1 col-md-3 col-sm-6">Squadra</div>
+                    <div class="list col-xl-1 col-md-3 col-sm-6">Nazionalità</div>
+                    <div class="list col-xl-1 col-md-3 col-sm-6">Piede</div>
+                    <div class="list col-xl-1 col-md-3 col-sm-6">Media Fantavoto</div>
+                    <div class="list col-xl-1 col-md-3 col-sm-6">Media Voto</div>
+                    <div class="list col-xl-1 col-md-3 col-sm-6">RC</div>
+                    <div class="list col-xl-1 col-md-3 col-sm-6">Ruolo Mantra</div>
+                    <div class="list col-xl-1 col-md-3 col-sm-6">Quotazione Attuale</div>
+                    <div class="list col-xl-1 col-md-3 col-sm-6">Quotazione Iniziale</div>
+                </div>
+                <div>
+                    <div class="row playerRow" v-for="(footballer, index) in footballersLoaded" :key="index">
+                        <div class="col-lg-1 col-md-3 col-sm-6"><img class="campioncino" :src="footballer.Cartoncino"> </div>
+                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Cognome & Nome: </span><router-link :to ="{name: 'detail', params: {id: footballer.key}}">{{ footballer.CognomeNome }}</router-link></div>
+                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Data di Nascita: </span>{{ footballer.AnnodiNascita }} </div>
+                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Squadra: </span>{{ footballer.Squadra }}</div>
+                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Nazionalità: </span>{{ footballer.Nazionalità }}</div>
+                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Piede: </span>{{ footballer.Piede }}</div>
+                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Media Fantavoto: </span>{{ footballer.MediaFantavoto }}</div>
+                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Media voto: </span>{{ footballer.MediaVoto }}</div>
+                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">RC: </span>{{ footballer.RC }}</div>
+                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Ruolo Mantra: </span>{{ footballer.RuoloM }}</div>
+                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Quotazione Attuale: </span>{{ footballer.QuotazioneAttuale }}</div>
+                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Quotazione Iniziale: </span>{{ footballer.QuotazioneIniziale }}</div>
+                    </div>
+                </div>
         </div>
     </div>
 
@@ -60,7 +56,8 @@ export default {
   data() {
     return {
       footballers: [],
-      length: 10
+      length: 10,
+      windowWidth:window.innerWidth
     };
   },
   created() {
@@ -89,27 +86,47 @@ export default {
         },
   methods: {
     loadMore() {
-      if (this.length > this.footballers.length) return;
-      this.length = this.length + 10;
+      if (this.lengdiv > this.footballers.length) return;
+      this.lengdiv = this.lengdiv + 10;
     },
+    onResize() {
+      this.windowWidth = window.innerWidth
+    }
   },
   computed: {
     footballersLoaded() {
       return this.footballers.slice(0, this.length);
     },
   },
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.onResize);
+    })
+  },
+
+  beforeDestroy() { 
+    window.removeEventListener('resize', this.onResize); 
+  },
 };
 </script>
 
 <style scoped>
-    .btn-primary {
-        margin-right: 12px;
-        border-bottom: 3px;
-    }
-
-    .Cartoncino{
-          height: 150px;
-          width: 120px;
+/*.container{
+  margin:0;
+  padding:0;
+}*/
+.campioncino{
+  width:100%;
+  height:auto;
+}
+.playerRow{
+  border-bottom:1px solid black;
+  text-align:center;
+}
+    .header{
+      border-bottom:1px solid black;
+      text-align:center;
+      font-weight:bold;
     }
 
     .list{
@@ -117,13 +134,15 @@ export default {
         color: green;
     }
 
-    .list2{
-        text-align: center;
+    .row{
+      display:flex;
+      flex-direction:row;
+      width:100%;
     }
 
-    .Nome{
-        text-align: center;
-
+    .container{
+      max-width:100%;
+      padding:0.5%;
     }
 
     .load-button{

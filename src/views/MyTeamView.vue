@@ -1,6 +1,6 @@
 <!--Elenco giocatori aggiunti alla propria squadra-->
 <template>
-  <div class="footballers">
+  <div class="container footballers">
     <h1 class="myTitle">La mia squadra</h1>
       <h5 class="insertTitle">Inserisci la tua squadra</h5>
       <!--vue select per scegliere all'interno del listone un giocatore da aggiungere-->
@@ -11,16 +11,22 @@
         v-model="selected"/>
       <!--button per salvare i dati al click-->
       <button @click="saveData" class="btn btn-primary">Inserisci</button>
-    <h3 class="myTeam">La mia squadra</h3>         
-      <div 
-        v-for="(my,index) in myTeam" :key="index" class="player"
-        :class="{ 'Por': my.RC == 'P', 'Dif': my.RC == 'D','Cen': my.RC == 'C','Att': my.RC == 'A', }"> 
-          <p> <router-link :to ="{name: 'detail', params: {id: my.key}}">{{ my.CognomeNome }}</router-link></p>
-          <p> {{my.Squadra}}</p>  
-          <p> {{my.RC}}</p>  
-          <p> {{my.RuoloM}}</p>  
-          <button type="submit" @click="deleteUser(my.key)" class="btn btn-danger">Rimuovi calciatore</button>
-      </div> 
+    <h3 class="myTeam">La mia squadra</h3>       
+    <div class="row">
+      <div class="col-lg-12 col-md-10 col-sm-8 col-xs-4">
+        <div class="row">
+          <div
+            v-for="(my,index) in myTeam" :key="index" class="row player"  v-if="windowWidth>=800"
+            :class="{ 'Por': my.RC == 'P', 'Dif': my.RC == 'D','Cen': my.RC == 'C','Att': my.RC == 'A', }"> 
+              <div class="col-lg-2 col-md-2 col-sm-6"><span><router-link :to ="{name: 'detail', params: {id: my.key}}">-->{{ my.CognomeNome }}</router-link></span></div>
+              <div class="col-lg-2 col-md-2 col-sm-6"><span> {{my.Squadra}}</span></div>  
+              <div class="col-lg-2 col-md-2 col-sm-6"><span> {{my.RC}}</span></div>  
+              <div class="col-lg-2 col-md-2 col-sm-6"><span> {{my.RuoloM}}</span></div>  
+              <div class="col-lg-2 col-md-2 col-sm-6"><button type="submit" @click="deleteUser(my.key)" class="btn btn-danger">Rimuovi calciatore</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -41,7 +47,9 @@ export default {
         squadra: null,
       },
       listone:[],
-      selected:null
+      selected:null,
+      windowWidth:window.innerWidth
+
     }
   },
 
@@ -97,7 +105,7 @@ methods: {
         querySnapshot.forEach (doc =>  {
           console.log(doc.data())
           const data =  {
-            key: doc.id,
+            key: doc.data().key,
             'ID': doc.data().ID,
             'CognomeNome': doc.data().CognomeNome,
             'Squadra': doc.data().Squadra,
@@ -132,7 +140,21 @@ methods: {
               console.error(error);
           })
         }
-      }
+      },
+
+  onResize() {
+      this.windowWidth = window.innerWidth
+    },    
+
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.onResize);
+    })
+  },
+
+  beforeDestroy() { 
+    window.removeEventListener('resize', this.onResize); 
+  },
 
 },
 beforeMount(){
@@ -149,6 +171,7 @@ beforeMount(){
   @import 'vue-select/dist/vue-select.css';
 
   .player {
+    width:100%;
     margin: 30px;
     padding: 20px;
     border-radius: 8px;
@@ -158,15 +181,23 @@ beforeMount(){
     justify-content: space-between;
   }
 
+  .row {
+    display:flex;
+    flex-direction:row;
+    width:100%;
+  }
+
+  .container{
+    max-width:100%;
+    padding:0.5%;
+  }
+
   .footballers {
-    margin: 10px;
+    margin:0;
+    padding:0;
   }
 
   .myTitle {
-    margin: 10px;
-  }
-
-  .insertForm {
     margin: 10px;
   }
 

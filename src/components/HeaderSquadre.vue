@@ -3,6 +3,7 @@
   <div class="mainContainer">
     <div  class= "containerLoghi" v-for="(squadra, index) in squadre" :key="index">
       <div class="container-team">
+        <!--Elenco loghi squadre che al click porta alla pagina di dettaglio della squadra selezionata-->
         <a>
           <router-link :to="{name: 'teamsDetail', params: {id:squadra.key}}"><img :src="squadra.Logo" :alt="squadra.Squadra" :title="squadra.Squadra"></router-link>
         </a>
@@ -21,6 +22,7 @@ export default {
                 squadre: []
             }
         },
+      //funzione che alla creazione della pagina richiama la squadra e il suo logo dalla collezione teams del Db
       created() {
           db.collection('teams').get().then(querySnapshot => {
               querySnapshot.forEach(doc => {
@@ -29,7 +31,6 @@ export default {
                       'Squadra': doc.data().Squadra,
                       'Logo': doc.data().Logo,
                 }
-                console.log(data)
                   this.squadre.push(data) 
                   })
               });
@@ -61,10 +62,6 @@ img {
 .mainContainer{
     overflow: auto;
     white-space: nowrap;  
-}
-
-div.scrollmenu a:hover {
-  background-color: #777;
 }
 
 </style>

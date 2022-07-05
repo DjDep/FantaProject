@@ -8,7 +8,7 @@ import 'bootstrap';
 
 
 Vue.use(VueRouter)
-
+//routes alle varie pagine del sito
 const router = new VueRouter({
   mode: 'history',
   base: import.meta.env.BASE_URL,
