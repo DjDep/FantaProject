@@ -22,7 +22,7 @@
               <div class="col-lg-2 col-md-2 col-sm-6"><span> {{my.Squadra}}</span></div>  
               <div class="col-lg-2 col-md-2 col-sm-6"><span> {{my.RC}}</span></div>  
               <div class="col-lg-2 col-md-2 col-sm-6"><span> {{my.RuoloM}}</span></div>  
-              <div class="col-lg-2 col-md-2 col-sm-6"><button type="submit" @click="deleteUser(my.key)" class="btn btn-danger">Rimuovi calciatore</button></div>
+              <div class="col-lg-2 col-md-2 col-sm-6"><button type="submit" @click="deleteUser(my.id_documento_in_squadra)" class="btn btn-danger">Rimuovi calciatore</button></div>
           </div>
         </div>
       </div>
@@ -105,6 +105,7 @@ methods: {
         querySnapshot.forEach (doc =>  {
           console.log(doc.data())
           const data =  {
+            id_documento_in_squadra:doc.id,
             key: doc.data().key,
             'ID': doc.data().ID,
             'CognomeNome': doc.data().CognomeNome,
