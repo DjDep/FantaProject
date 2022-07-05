@@ -1,4 +1,4 @@
-const firebase = require("firebase");
+/*const firebase = require("firebase");
 require("firebase/firestore");
 const fs = require('fs');
 
@@ -94,4 +94,4 @@ class PopulateJsonFireStore {
 
 const populateFireStore = new PopulateJsonFireStore();
 populateFireStore.populate();
-
+*/

@@ -18,7 +18,7 @@
           <div
             v-for="(my,index) in myTeam" :key="index" class="row player"  v-if="windowWidth>=800"
             :class="{ 'Por': my.RC == 'P', 'Dif': my.RC == 'D','Cen': my.RC == 'C','Att': my.RC == 'A', }"> 
-              <div class="col-lg-2 col-md-2 col-sm-6"><span><router-link :to ="{name: 'detail', params: {id: my.key}}">-->{{ my.CognomeNome }}</router-link></span></div>
+              <div class="col-lg-2 col-md-2 col-sm-6"><span><router-link :to ="{name: 'detail', params: {id: my.key}}">{{ my.CognomeNome }}</router-link></span></div>
               <div class="col-lg-2 col-md-2 col-sm-6"><span> {{my.Squadra}}</span></div>  
               <div class="col-lg-2 col-md-2 col-sm-6"><span> {{my.RC}}</span></div>  
               <div class="col-lg-2 col-md-2 col-sm-6"><span> {{my.RuoloM}}</span></div>  
@@ -54,7 +54,7 @@ export default {
   },
 
 methods: {
-
+  //funzione per il salvataggio dei dati all'interno della collezione myTeam sul DB
       saveData(){
         db.collection("myTeam")
             .doc()
