@@ -1,17 +1,15 @@
-<!-- creazione di un component per la navigazione tramite i loghi delle squadre -->
+<!--component per la navigazione nel dettaglio delle squadre attraverso i loghi-->
 <template>
-  <div class="giulia">
-    <div  class= "matteo" v-for="(squadra, index) in squadre" :key="index">
-    <div class="container-team">
-
-    <a>
-     <router-link :to="{name: 'teamsDetail', params: {id:squadra.key}}"><img :src="squadra.Logo" :alt="squadra.Squadra" :title="squadra.Squadra"></router-link>
-     </a>
-    </div>
+  <div class="mainContainer">
+    <div  class= "containerLoghi" v-for="(squadra, index) in squadre" :key="index">
+      <div class="container-team">
+        <!--Elenco loghi squadre che al click porta alla pagina di dettaglio della squadra selezionata-->
+        <a>
+          <router-link :to="{name: 'teamsDetail', params: {id:squadra.key}}"><img :src="squadra.Logo" :alt="squadra.Squadra" :title="squadra.Squadra"></router-link>
+        </a>
+      </div>
     </div>
   </div>
-  
-
 </template>
 
 <script >
@@ -24,19 +22,19 @@ export default {
                 squadre: []
             }
         },
-        created() {
-            db.collection('teams').get().then(querySnapshot => {
-                querySnapshot.forEach(doc => {
-                  const data = {
-                    key: doc.id,
-                        'Squadra': doc.data().Squadra,
-                        'Logo': doc.data().Logo,
-                  }
-                  console.log(data)
-                   this.squadre.push(data) 
-                    })
-                });
-}
+      //funzione che alla creazione della pagina richiama la squadra e il suo logo dalla collezione teams del Db
+      created() {
+          db.collection('teams').get().then(querySnapshot => {
+              querySnapshot.forEach(doc => {
+                const data = {
+                  key: doc.id,
+                      'Squadra': doc.data().Squadra,
+                      'Logo': doc.data().Logo,
+                }
+                  this.squadre.push(data) 
+                  })
+              });
+  }
 }
 
 </script>
@@ -51,27 +49,19 @@ export default {
 .container-team:hover{
   background-color: lightgreen;
 }
+
 img {
     height: 55px;
     width: 55px;
-
 }
 
-.matteo{
+.containerLoghi{
     display: inline-block;
    text-align: center;
 }
-.giulia{
+.mainContainer{
     overflow: auto;
     white-space: nowrap;  
-    
 }
-
-
-div.scrollmenu a:hover {
-  background-color: #777;
-}
-
-
 
 </style>

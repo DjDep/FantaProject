@@ -1,40 +1,43 @@
 
 <template>
-
-<table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>AnnodiNascita</th>
-                        <th>CognomeNome</th>
-                        <th>MediaFantavoto</th>
-                        <th>MediaVoto</th>
-                        <th>Cartoncino</th>
-                        <th>Squadra</th>
-                        <th>RC</th>
-                        <th>Ruolo Mantra</th>
-                        <th>Quotazione Attuale</th>
-                        <th>Quotazione Iniziale</th>
-                        <th>Piede</th>
-                        <th>Nazionalità</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="detail in dettaglio" :key="detail.ID">
-                        <td>{{ detail.AnnodiNascita }}</td>
-                        <td>{{ detail.CognomeNome }}</td>
-                        <td>{{ detail.MediaFantavoto }}</td>
-                        <td>{{ detail.MediaVoto }}</td>
-                        <td><img :src="detail.Cartoncino"> </td>
-                        <td>{{ detail.Squadra }}</td>
-                        <td>{{ detail.RC }}</td>
-                        <td>{{ detail.RuoloM }}</td>
-                        <td>{{ detail.QuotazioneAttuale }}</td>
-                        <td>{{ detail.QuotazioneIniziale }}</td>
-                        <td>{{ detail.Piede }}</td>
-                        <td>{{ detail.Nazionalità }}</td>
-                    </tr>
-                </tbody>
-            </table>
+    <!--Tabella dettaglio per i singoli giocatori-->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                    <div class="row header" v-if="windowWidth>=800">
+                        <div class="list col-xl-1 col-md-3 col-sm-6">Cartoncino</div>
+                        <div class="list col-xl-1 col-md-3 col-sm-6">Cognome & Nome</div>
+                        <div class="list col-xl-1 col-md-3 col-sm-6">Anno Di Nascita</div>
+                        <div class="list col-xl-1 col-md-3 col-sm-6">Squadra</div>
+                        <div class="list col-xl-1 col-md-3 col-sm-6">Nazionalità</div>
+                        <div class="list col-xl-1 col-md-3 col-sm-6">Piede</div>
+                        <div class="list col-xl-1 col-md-3 col-sm-6">Media Fantavoto</div>
+                        <div class="list col-xl-1 col-md-3 col-sm-6">Media Voto</div>
+                        <div class="list col-xl-1 col-md-3 col-sm-6">RC</div>
+                        <div class="list col-xl-1 col-md-3 col-sm-6">Ruolo Mantra</div>
+                        <div class="list col-xl-1 col-md-3 col-sm-6">Quotazione Attuale</div>
+                        <div class="list col-xl-1 col-md-3 col-sm-6">Quotazione Iniziale</div>
+                    </div>
+                    <div>
+                        <div class="row playerRow" v-for="detail in dettaglio" :key="detail.ID">
+                            <div class="col-lg-1 col-md-3 col-sm-6"><img class="campioncino" :src="detail.Cartoncino"> </div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Cognome & Nome: </span>{{ detail.CognomeNome }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Anno di Nascita: </span>{{ detail.AnnodiNascita }} </div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Squadra: </span>{{ detail.Squadra }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Nazionalità: </span>{{ detail.Nazionalità }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Piede: </span>{{ detail.Piede }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Media Fantavoto: </span>{{ detail.MediaFantavoto }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Media voto: </span>{{ detail.MediaVoto }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">RC: </span>{{ detail.RC }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Ruolo Mantra: </span>{{ detail.RuoloM }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Quotazione Attuale: </span>{{ detail.QuotazioneAttuale }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Quotazione Iniziale: </span>{{ detail.QuotazioneIniziale }}</div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <router-link to="/list"><button type="button" class="btn btn-success">Indietro</button></router-link>
+    </div>
 </template>
 
 <script>
@@ -45,33 +48,93 @@ export default {
     data: function () {
         return{
             id: this.$route.params.id,
-            dettaglio : []
+            dettaglio : [],
+            windowWidth:window.innerWidth
         }
     },
 
-
+//funzione che alla creazione restituisce i dati del giocatore selezionato usando l'id come key
  created() {
     console.log(this.id)
-            db.collection('footballers').doc(this.id).get().then(doc => {
-                  const data = {
-                    //key: doc.id,
-                        'ID': doc.data().ID,
-                        'AnnodiNascita': doc.data()['Anno di nascita'].replace("00:00:00", ""),
-                        'CognomeNome': doc.data().CognomeNome,
-                        'MediaFantavoto': doc.data()['Media fantavoto'],
-                        'MediaVoto': doc.data()['Media voto'],
-                        'Cartoncino': doc.data().Cartoncino,
-                        'Squadra': doc.data().Squadra,
-                        'RC': doc.data().RC,
-                        'RuoloM': doc.data().RuoloM,
-                        'QuotazioneAttuale': doc.data().QuotazioneAttuale,
-                        'QuotazioneIniziale': doc.data().QuotazioneIniziale,
-                        'Piede': doc.data().Piede,
-                        'Nazionalità': doc.data().Nazionalità,
-                  }
-            console.log("qualcosa")
-            this.dettaglio.push(data)     
-            });
-        },
+        db.collection('footballers').doc(this.id).get().then(doc => {
+                const data = {
+                    'ID': doc.data().ID,
+                    'AnnodiNascita': doc.data()['Anno di nascita'].replace("00:00:00", ""),
+                    'CognomeNome': doc.data().CognomeNome,
+                    'MediaFantavoto': doc.data()['Media fantavoto'],
+                    'MediaVoto': doc.data()['Media voto'],
+                    'Cartoncino': doc.data().Cartoncino,
+                    'Squadra': doc.data().Squadra,
+                    'RC': doc.data().RC,
+                    'RuoloM': doc.data().RuoloM,
+                    'QuotazioneAttuale': doc.data().QuotazioneAttuale,
+                    'QuotazioneIniziale': doc.data().QuotazioneIniziale,
+                    'Piede': doc.data().Piede,
+                    'Nazionalità': doc.data().Nazionalità,
+                }
+        this.dettaglio.push(data)     
+        });
+    },
+
+    methods:{
+        //Assegnazione alla variabile windowWidth della larghezza attuale della finestra
+        //La funzione viene chiamata ogni qualvolta la dimensione della finestra cambia (resize)
+        onResize() {
+        this.windowWidth = window.innerWidth
+        } 
+    },
+
+    //al mount della pagina si aggiunge l'event listener per la funzione onResize 
+    mounted() {
+        this.$nextTick(() => {
+            window.addEventListener('resize', this.onResize);
+        })
+    },
+    //rimozione dell'event listener prima del destroy
+    beforeDestroy() { 
+        window.removeEventListener('resize', this.onResize); 
+    },
 }
+
 </script>
+
+<style>
+
+.container{
+    max-width:100%;
+    padding:0.5%;
+}
+
+.campioncino{
+  width:100%;
+  height:auto;
+}
+.playerRow{
+  border-bottom:1px solid black;
+  text-align:center;
+}
+.header{
+    border-bottom:1px solid black;
+    text-align:center;
+    font-weight:bold;
+}
+
+.list{
+    text-align: center;
+    color: green;
+    font-weight: 16;
+}
+
+.row{
+    display:flex;
+    flex-direction:row;
+    width:100%;
+}
+
+.container{
+    max-width:100%;
+    padding:0.5%;
+}
+
+
+</style>

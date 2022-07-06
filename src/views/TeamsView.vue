@@ -1,48 +1,36 @@
 <!-- SQUADRE-->
 <template>
-    
-
-    <div class="footballers">
-     <HeaderSquadre/>
+    <div class="container">
+        <HeaderSquadre/>
         <h1>Squadre </h1>
         <h6>Campionato Serie A 2021/2022</h6>
-
-       
-
-    <div class="row">
-        <div class="col-md-12">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th class="all">Logo</th>
-                        <th class="all">Squadra</th>
-                        <th class="all">Allenatore</th>
-                        <th class="all">Stadio</th>
-                        <th class="all">Capienza stadio</th>
-                        <th class="all">Data di fondazione</th>
-                      <!--  <th class="all">Info</th>-->
-                        <th class="all">Classifica</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="(team,index) in teams" :key="index">
-                        <td><img class="Logo" :src="team.Logo"></td>
-                        <td id="Squadra"><router-link :to="{name: 'teamsDetail', params: {id:team.key}}">{{ team.Squadra }}</router-link></td>
-                        <td id="Allenatore">{{ team.Allenatore }}</td>
-                        <td id="Stadio">{{ team.Stadio }}</td>
-                        <td id="CapienzaStadio">{{ team.CapienzaStadio }}</td>
-                        <td id="DataFondazione">{{ team.DataFondazione }}</td>
-                       <!-- <td id="Info">{{ team.Info }}</td>-->
-                        <td id="Classifica">{{ team.Classifica }}</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="row">
+            <div class="col-lg-12">
+                    <div class="row header" v-if="windowWidth>=800">
+                        <div class="list col-xl-1 col-md-3 col-sm-6">Logo</div>
+                        <div class="list col-xl-1 col-md-3 col-sm-6">Squadra</div>
+                        <div class="list col-xl-1 col-md-3 col-sm-6">Allenatore</div>
+                        <div class="list col-xl-1 col-md-3 col-sm-6">Stadio</div>
+                        <div class="list col-xl-1 col-md-3 col-sm-6">Capienza stadio</div>
+                        <div class="list col-xl-1 col-md-3 col-sm-6">Data fondazione</div>
+                        <div class="list col-xl-1 col-md-3 col-sm-6">Info</div>
+                        <div class="list col-xl-1 col-md-3 col-sm-6">Classifica</div>
+                    </div>
+                    <div>
+                        <div class="row playerRow" v-for="(team,index) in teams" :key="index">
+                            <div class="col-lg-1 col-md-3 col-sm-6"><img class="logo" :src="team.Logo"></div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Squadra: </span><router-link :to="{name: 'teamsDetail', params: {id:team.key}}">{{ team.Squadra }}</router-link></div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Allenatore: </span>{{ team.Allenatore }} </div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Stadio: </span>{{ team.Stadio }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Capienza stadio: </span>{{ team.CapienzaStadio }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Data fondazione: </span>{{ team.DataFondazione }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Info: </span>{{ team.Info }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Classifica: </span>{{ team.Classifica }}</div>
+                        </div>
+                    </div>
+            </div>
         </div>
-         </div>
-       
     </div>
-    
-
 </template>
 
 
@@ -53,7 +41,8 @@ import HeaderSquadre from '/src/components/HeaderSquadre.vue'
     export default {
         data() {
             return {
-                teams: []
+                teams: [],
+                windowWidth:window.innerWidth
             }
         },
         created() {
@@ -75,6 +64,20 @@ import HeaderSquadre from '/src/components/HeaderSquadre.vue'
                     })
                 });
         },
+
+    onResize() {
+      this.windowWidth = window.innerWidth
+    },
+
+    mounted() {
+        this.$nextTick(() => {
+        window.addEventListener('resize', this.onResize);
+        })
+    },
+
+    beforeDestroy() { 
+        window.removeEventListener('resize', this.onResize); 
+    },
         components: {
             HeaderSquadre
         },
@@ -84,49 +87,42 @@ import HeaderSquadre from '/src/components/HeaderSquadre.vue'
 </script>
 
 <style scoped>
-.nav-link {
-    padding:0px;
-    margin: 10px;
-
+.container{
+    max-width:100%;
+    padding:0.5%;
 }
 
-.iconHS { /* logo/icona */
-    height: 50px;
-    width: 50px;
-    margin:  0px;
+.row{
+    display:flex;
+    flex-direction:row;
+    width:100%;
 }
 
-.all{
-    text-align: center;
+.playerRow{
+  border-bottom:1px solid black;
+  text-align:center;
+}
+.header{
+    border-bottom:1px solid black;
+    text-align:center;
+    font-weight:bold;
 }
 
-.Logo {
+.logo {
     height: 70px;
     width: 70px;
-    
 }
 
-#Squadra{
+.tableTitle {
     text-align: center;
+    color: green;
 }
 
-#Allenatore{
+.list{
     text-align: center;
+    color: green;
 }
-
-#Stadio{
-    text-align: center;
-}
-
-#CapienzaStadio{
-    text-align: center;
-}
-
-#DataFondazione{
-    text-align: center;
-}
-
-#Classifica{
+.tableData {
     text-align: center;
 }
 </style>
