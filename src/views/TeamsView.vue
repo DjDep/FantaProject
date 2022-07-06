@@ -20,7 +20,7 @@
                         <th class="all">Stadio</th>
                         <th class="all">Capienza stadio</th>
                         <th class="all">Data di fondazione</th>
-                        <th class="all">Info</th>
+                      <!--  <th class="all">Info</th>-->
                         <th class="all">Classifica</th>
                     </tr>
                 </thead>
@@ -32,7 +32,7 @@
                         <td id="Stadio">{{ team.Stadio }}</td>
                         <td id="CapienzaStadio">{{ team.CapienzaStadio }}</td>
                         <td id="DataFondazione">{{ team.DataFondazione }}</td>
-                        <td id="Info">{{ team.Info }}</td>
+                       <!-- <td id="Info">{{ team.Info }}</td>-->
                         <td id="Classifica">{{ team.Classifica }}</td>
                     </tr>
                 </tbody>
@@ -67,7 +67,7 @@ import HeaderSquadre from '/src/components/HeaderSquadre.vue'
                         'Stadio': doc.data().Stadio,
                         'CapienzaStadio': doc.data()['Capienza stadio'],
                         'DataFondazione': doc.data()['Data di fondazione'],
-                        'Info': doc.data().Info,
+                       'Info': doc.data().Info,
                         'Classifica': doc.data().Classifica,
                   }
                   console.log(data)

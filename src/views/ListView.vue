@@ -95,6 +95,7 @@ import  db  from '../main.js';
 
 <template>
 <div>
+<!-- Giocatori su impostati graficamente su schermo -->
     <div class="row">
         <div class="col-md-12">
             <table class="table table-striped ">
@@ -135,11 +136,12 @@ import  db  from '../main.js';
         </div>
     </div>
 
+<!-- Button per caricare i giocatori-->
   <b-button 
   class="load-button" 
   @click="loadMore" 
   variant="success"
-  >
+  > 
   Carica altri giocatori
   </b-button>
 
@@ -155,10 +157,10 @@ export default {
   data() {
     return {
       footballers: [],
-      length: 10
+      length: 10 /* Item caricati appena si entra nella pagina */
     };
   },
-  created() {
+  created() { /* Creazione dell'array dei giocatori */
             db.collection('footballers').orderBy("RC", "desc").get().then(querySnapshot => {
                 querySnapshot.forEach(doc => {
                   const data = {
@@ -183,12 +185,15 @@ export default {
                 });
         },
   methods: {
+    /* Vengono caricati 10 giocatori aggiuntivi quando la funzione viene attivata dal button*/
     loadMore() {
       if (this.length > this.footballers.length) return;
       this.length = this.length + 10;
     },
   },
-  computed: {
+  computed: { /* Si prendono i dati all'interno dell'array footballers dalla posizione 0 alla posizione selezionata 
+  = su schermo sono mostrati i dati dalla posizione 0 alla posizione raggiunta dall'utente con il LoadButton
+   */
     footballersLoaded() {
       return this.footballers.slice(0, this.length);
     },

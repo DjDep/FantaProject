@@ -23,7 +23,7 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="card homeCards">
-                    <img src="@/PalloneSerieA.png" class="homeImage" alt="La mia squadra">
+                    <img src="@/NewLogoTeam.png" class=" card-img-top homeImage" alt="La mia squadra">
                     <div class="card-body">
                         <h5 class="card-title">La mia squadra</h5>
                         <p class="card-text">Qui puoi trovare tutti i giocatori della tua squadra </p>
