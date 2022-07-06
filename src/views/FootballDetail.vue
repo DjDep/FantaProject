@@ -36,6 +36,7 @@
                     </div>
             </div>
         </div>
+        <router-link to="/list"><button type="button" class="btn btn-success">Indietro</button></router-link>
     </div>
 </template>
 

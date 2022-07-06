@@ -1,42 +1,5 @@
 <!-- SQUADRE-->
 <template>
-    <!--<div class="footballers">
-     <HeaderSquadre/>
-        <h1>Squadre </h1>
-        <h6>Campionato Serie A 2021/2022</h6>
-        <div class="row">
-            <div class="col-md-12">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th class="tableTitle">Logo</th>
-                            <th class="tableTitle">Squadra</th>
-                            <th class="tableTitle">Allenatore</th>
-                            <th class="tableTitle">Stadio</th>
-                            <th class="tableTitle">Capienza stadio</th>
-                            <th class="tableTitle">Data di fondazione</th>
-                            <th class="tableTitle">Info</th>
-                            <th class="tableTitle">Classifica</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="(team,index) in teams" :key="index">
-                            <td><img class="Logo" :src="team.Logo"></td>
-                            <td class="tableData"><router-link :to="{name: 'teamsDetail', params: {id:team.key}}">{{ team.Squadra }}</router-link></td>
-                            <td class="tableData">{{ team.Allenatore }}</td>
-                            <td class="tableData">{{ team.Stadio }}</td>
-                            <td class="tableData">{{ team.CapienzaStadio }}</td>
-                            <td class="tableData">{{ team.DataFondazione }}</td>
-                            <td class="tableData">{{ team.Info }}</td>
-                            <td class="tableData">{{ team.Classifica }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>-->
-
-
     <div class="container">
         <HeaderSquadre/>
         <h1>Squadre </h1>
