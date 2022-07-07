@@ -5,7 +5,8 @@
       <div class="container-team">
         <!--Elenco loghi squadre che al click porta alla pagina di dettaglio della squadra selezionata-->
         <a>
-          <router-link :to="{name: 'teamsDetail', params: {id:squadra.key}}"><img :src="squadra.Logo" :alt="squadra.Squadra" :title="squadra.Squadra"></router-link>
+          <router-link :to="{name: 'teamsDetail', params: {id:squadra.key}}">
+          <img :src="squadra.Logo" :alt="squadra.Squadra" :title="squadra.Squadra"></router-link>
         </a>
       </div>
     </div>
@@ -28,6 +29,7 @@ export default {
               querySnapshot.forEach(doc => {
                 const data = {
                   key: doc.id,
+                      
                       'Squadra': doc.data().Squadra,
                       'Logo': doc.data().Logo,
                 }

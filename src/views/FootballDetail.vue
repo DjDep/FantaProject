@@ -123,6 +123,7 @@ export default {
     text-align: center;
     color: green;
     font-weight: 16;
+    font-weight:bold;
 }
 
 .row{

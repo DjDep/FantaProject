@@ -8,17 +8,18 @@
         :options="listone" 
         :getOptionLabel="getText"
         item-text="CognomeNome"
-        v-model="selected"/>
+        v-model="selected"
+        class="barra" />
       <!--button per salvare i dati al click-->
-      <button @click="saveData" class="btn btn-primary">Inserisci</button>
-    <h3 class="myTeam">La mia squadra</h3>       
+      <button @click="saveData" class="btn btn-success button-inserisci ">Inserisci</button>
+    <h3 class="myTeam">La mia squadra:</h3>       
     <div class="row">
       <div class="col-lg-12 col-md-10 col-sm-8 col-xs-4">
         <div class="row">
           <div
-            v-for="(my,index) in myTeam" :key="index" class="row player"  v-if="windowWidth>=800"
+            v-for="(my,index) in myTeam" :key="index" class="row player" v-if="windowWidth>=800"
             :class="{ 'Por': my.RC == 'P', 'Dif': my.RC == 'D','Cen': my.RC == 'C','Att': my.RC == 'A', }"> 
-              <div class="col-lg-2 col-md-2 col-sm-6"><span><router-link :to ="{name: 'detail', params: {id: my.key}}">{{ my.CognomeNome }}</router-link></span></div>
+              <div class="col-lg-2 col-md-2 col-sm-6 "><span ><router-link class="text-decoration-none text-link":to ="{name: 'detail', params: {id: my.key}}">{{ my.CognomeNome }}</router-link></span></div>
               <div class="col-lg-2 col-md-2 col-sm-6"><span> {{my.Squadra}}</span></div>  
               <div class="col-lg-2 col-md-2 col-sm-6"><span> {{my.RC}}</span></div>  
               <div class="col-lg-2 col-md-2 col-sm-6"><span> {{my.RuoloM}}</span></div>  
@@ -186,11 +187,13 @@ beforeMount(){
     display:flex;
     flex-direction:row;
     width:100%;
+  
   }
 
   .container{
     max-width:100%;
     padding:0.5%;
+    
   }
 
   .footballers {
@@ -219,5 +222,13 @@ beforeMount(){
   }
   .myTeam {
     margin: 30px;
+    text-align: center;
   }
+  .button-inserisci{
+    margin: 10px 30px;
+  }
+  .barra{
+    margin: 10px;
+  }
+  
 </style>

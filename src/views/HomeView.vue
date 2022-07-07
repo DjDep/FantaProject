@@ -30,25 +30,17 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="card homeCards">
-                    <img src="@/NewLogoTeam.png" class=" card-img-top homeImage" alt="La mia squadra">
+                    <img src="@/NewLogoTeam.png" class="  correctHeight homeImage" alt="La mia squadra">
                     <div class="card-body">
                         <h5 class="card-title">La mia squadra</h5>
                         <p class="card-text">Qui puoi trovare tutti i giocatori della tua squadra </p>
                         <router-link to="/myteam"><a class="btn btn-primary navButton">Vai alla pagina</a></router-link>
                     <!--Card per il collegamento alla mia squadra-->
-                    <div class="col-lg-4 col-md-6 col-sm-12 mx-auto">
-                        <div class="card homeCards">
-                            <img src="@/PalloneSerieA.png" class="homeImage correctHeight" alt="La mia squadra">
-                            <div class="card-body">
-                                <h5 class="card-title">La mia squadra</h5>
-                                <p class="card-text">Qui puoi trovare tutti i giocatori della tua squadra </p>
-                                <router-link to="/myteam"><a class="btn btn-primary navButton">Vai alla pagina</a></router-link>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </template>
 
@@ -93,6 +85,7 @@ export default {
     .container{
       max-width:100%;
       padding:0.5%;
+      
     }
     .homeImage {
         height: 20rem;
@@ -102,7 +95,7 @@ export default {
         width: 16rem;
         text-align: center!important;;
         align-items: center;
-        margin: 5rem;
+        margin: 5rem; 
     }
 
     .navButton {

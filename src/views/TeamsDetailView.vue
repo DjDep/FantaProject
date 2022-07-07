@@ -29,7 +29,7 @@
                     </div>
             </div>
         </div>
-        <router-link to="/teams"><button type="button" class="btn btn-success">Indietro</button></router-link>
+        <router-link to="/teams"><button type="button" class="btn btn-success indietro">Indietro</button></router-link>
     </div>
 </template>
 
@@ -59,7 +59,7 @@ import  db  from '../main.js';
                         'CapienzaStadio': doc.data()['Capienza stadio'],
                         'DataFondazione': doc.data()['Data di fondazione'],
                         'Info': doc.data().Info,
-                        'Classifica': doc.data().Classifica,
+                        'Classifica': doc.data().Classifica+"°",
                   }
                   console.log(data)
                    this.teamsDetail.push(data) 
@@ -122,9 +122,13 @@ import  db  from '../main.js';
 .list{
     text-align: center;
     color: green;
+    font-weight:bold;
 }
 .tableData {
     text-align: center;
+}
+.indietro{
+    margin: 20px;
 }
 </style>
 
