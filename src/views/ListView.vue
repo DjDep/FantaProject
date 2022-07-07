@@ -95,7 +95,8 @@ export default {
       this.windowWidth = window.innerWidth
     }
   },
-  computed: { /* Si prendono i dati all'interno dell'array footballers dalla posizione 0 alla posizione selezionata 
+  computed: { 
+    /* Si prendono i dati all'interno dell'array footballers dalla posizione 0 alla posizione selezionata 
   = su schermo sono mostrati i dati dalla posizione 0 alla posizione raggiunta dall'utente con il LoadButton
    */
     footballersLoaded() {
@@ -115,10 +116,6 @@ export default {
 </script>
 
 <style scoped>
-/*.container{
-  margin:0;
-  padding:0;
-}*/
 
 .campioncino{
   width:800%;

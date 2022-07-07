@@ -114,19 +114,13 @@ import HeaderSquadre from '/src/components/HeaderSquadre.vue'
     width: 70px;
 }
 
-.tableTitle {
-    text-align: center;
-    color: green;
-}
 
 .list{
     text-align: center;
     color: green;
     font-weight:bold;
 }
-.tableData {
-    text-align: center;
-}
+
 </style>
 
 
