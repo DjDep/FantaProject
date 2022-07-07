@@ -114,17 +114,9 @@ import  db  from '../main.js';
     width: 50px;
 }
 
-.tableTitle {
-    text-align: center;
-    color: green;
-}
-
 .list{
     text-align: center;
     color: green;
-}
-.tableData {
-    text-align: center;
 }
 </style>
 

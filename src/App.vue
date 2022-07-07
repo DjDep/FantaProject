@@ -1,10 +1,10 @@
 <script>
-import TopBarMatte from '@/components/TopBarMatte.vue';
+import TopBar from '@/components/TopBar.vue';
 import Footer from '@/components/Footer.vue';
 
 export default {
   components:{
-    TopBarMatte,
+    TopBar,
     Footer,
   }
 }
@@ -12,7 +12,7 @@ export default {
 
 <template>
   <div id="app">
-    <TopBarMatte/>
+    <TopBar/>
     <router-view/>
     <Footer/>
   </div>

@@ -33,7 +33,6 @@
 
 <script lang="ts">
 import Footer from '../components/Footer.vue'
-
 import  db  from '../main.js';
 
 export default {
