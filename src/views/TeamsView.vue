@@ -18,7 +18,7 @@
                     <div>
                         <div class="row teamRow" v-for="(team,index) in teams" :key="index">
                             <div class="col-lg-1 col-md-3 col-sm-6"><img class="logo" :src="team.Logo"></div>
-                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Squadra: </span><router-link class="text-decoration-none text-link" :to="{name: 'teamsDetail', params: {id:team.key}}">{{ team.Squadra }}</router-link></div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Squadra: </span><router-link class="text-decoration-none text-success" :to="{name: 'teamsDetail', params: {id:team.key}}">{{ team.Squadra }}</router-link></div>
                             <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Allenatore: </span>{{ team.Allenatore }} </div>
                             <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Stadio: </span>{{ team.Stadio }}</div>
                             <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Capienza stadio: </span>{{ team.CapienzaStadio }}</div>

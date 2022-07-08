@@ -169,9 +169,6 @@ methods: {
     this.loadListone();
       this.readData()
   },
-    components:{
-        Footer,
-    },
 }
 </script>
 

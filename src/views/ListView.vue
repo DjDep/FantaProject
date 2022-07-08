@@ -21,7 +21,7 @@
                 <div>
                     <div class="row playerRow" v-for="(footballer, index) in footballersLoaded" :key="index">
                         <div class="col-lg-1 col-md-3 col-sm-6"><img class="campioncino" :src="footballer.Cartoncino"> </div>
-                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Cognome & Nome: </span><router-link class="text-decoration-none text-dark" :to ="{name: 'detail', params: {id: footballer.key}}">{{ footballer.CognomeNome }}</router-link></div>
+                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Cognome & Nome: </span><router-link class="text-decoration-none text-success" :to ="{name: 'detail', params: {id: footballer.key}}">{{ footballer.CognomeNome }}</router-link></div>
                         <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Data di Nascita: </span>{{ footballer.AnnodiNascita }} </div>
                         <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Squadra: </span>{{ footballer.Squadra }}</div>
                         <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Nazionalità: </span>{{ footballer.Nazionalità }}</div>
