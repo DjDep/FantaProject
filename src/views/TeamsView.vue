@@ -35,33 +35,34 @@
 <script>
 import  db  from '../main.js';
 import HeaderSquadre from '/src/components/HeaderSquadre.vue'
-    
-    export default {
-        data() {
-            return {
-                teams: [],
-                windowWidth:window.innerWidth
-            }
-        },
-        //creazione array delle squadre
-        created() {
-            db.collection('teams').get().then(querySnapshot => {
-                querySnapshot.forEach(doc => {
-                  const data = {
-                    key: doc.id,
-                        'Logo': doc.data().Logo,
-                        'Squadra': doc.data().Squadra,
-                        'Allenatore': doc.data().Allenatore,
-                        'Stadio': doc.data().Stadio,
-                        'CapienzaStadio': doc.data()['Capienza stadio'],
-                        'DataFondazione': doc.data()['Data di fondazione'],
-                       'Info': doc.data().Info,
-                        'Classifica': doc.data().Classifica+"°",
-                  }
-                   this.teams.push(data) 
-                    })
-                });
-        },
+
+
+export default {
+    data() {
+        return {
+            teams: [],
+            windowWidth:window.innerWidth
+        }
+    },
+    //creazione array delle squadre
+    created() {
+        db.collection('teams').get().then(querySnapshot => {
+            querySnapshot.forEach(doc => {
+                const data = {
+                key: doc.id,
+                    'Logo': doc.data().Logo,
+                    'Squadra': doc.data().Squadra,
+                    'Allenatore': doc.data().Allenatore,
+                    'Stadio': doc.data().Stadio,
+                    'CapienzaStadio': doc.data()['Capienza stadio'],
+                    'DataFondazione': doc.data()['Data di fondazione'],
+                    'Info': doc.data().Info,
+                    'Classifica': doc.data().Classifica+"°",
+                }
+                this.teams.push(data) 
+                })
+            });
+    },
     //Assegnazione alla variabile windowWidth della larghezza attuale della finestra
     //La funzione viene chiamata ogni qualvolta la dimensione della finestra cambia (resize)
     onResize() {
@@ -85,6 +86,7 @@ import HeaderSquadre from '/src/components/HeaderSquadre.vue'
        
 
     }
+
 </script>
 
 <style scoped>
