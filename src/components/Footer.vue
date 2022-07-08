@@ -66,27 +66,27 @@
 </template>
 
 <style scoped>
-.logo{
-    padding: 0px;
-    margin:0px;
-}
+  .logo{
+      padding: 0px;
+      margin:0px;
+  }
 
-.testo{
-    margin:10px;
-}
+  .testo{
+      margin:10px;
+  }
 
-.link-utili,
-.text-contact{
-  padding: 20px;
-  
-}
+  .link-utili,
+  .text-contact{
+    padding: 20px;
+    
+  }
 
-a.nav-link{
-  padding:0px;
-}
+  a.nav-link{
+    padding:0px;
+  }
 
-.copyright{
-  background-color: rgb(0,135,68);
-}
+  .copyright{
+    background-color: rgb(0,135,68);
+  }
 
 </style>

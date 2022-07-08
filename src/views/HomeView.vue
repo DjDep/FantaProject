@@ -44,7 +44,6 @@
 </template>
 
 <script lang="ts">
-import db from '../main.js'
 
 export default {
     name: "home",
@@ -54,6 +53,8 @@ export default {
     },
 
     methods: {
+    //Assegnazione alla variabile windowWidth della larghezza attuale della finestra
+    //La funzione viene chiamata ogni qualvolta la dimensione della finestra cambia (resize)
         onResize() {
             this.windowWidth = window.innerWidth
         }
@@ -65,41 +66,40 @@ export default {
         window.addEventListener('resize', this.onResize);
         })
     },
-        //rimozione dell'event listener prima del destroy
-        beforeDestroy() { 
-            window.removeEventListener('resize', this.onResize); 
-        },
-    }
+    //rimozione dell'event listener prima del destroy
+    beforeDestroy() { 
+        window.removeEventListener('resize', this.onResize); 
+    },
+}
 
 
 </script>
 
 <style scoped>
-    .row{
-      display:flex;
-      flex-direction:row;
-      width:100%;
-    }
+.row{
+    display:flex;
+    flex-direction:row;
+    width:100%;
+}
 
-    .container{
-      max-width:100%;
-      padding:0.5%;
-      
-    }
-    .homeImage {
-        height: 20rem;
-        width: 14rem;
-    }
-    .homeCards {
-        width: 16rem;
-        text-align: center!important;;
-        align-items: center;
-        margin: 5rem; 
-    }
+.container{
+    max-width:100%;
+    padding:0.5%;
+    
+}
+.homeImage {
+    height: 20rem;
+    width: 14rem;
+}
+.homeCards {
+    width: 16rem;
+    text-align: center!important;;
+    align-items: center;
+    margin: 5rem; 
+}
 
-    .navButton {
-        background-color: rgb(0, 135, 68);
-        border: rgb(0, 135, 68);
-    }
-
+.navButton {
+    background-color: rgb(0, 135, 68);
+    border: rgb(0, 135, 68);
+}
 </style>

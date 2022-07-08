@@ -1,10 +1,10 @@
 
 <template>
-    <!--Tabella dettaglio per i singoli giocatori-->
     <div class="container">
+    <!--Tabella dettaglio per i singoli giocatori-->
         <div class="row">
             <div class="col-lg-12">
-                    <div class="row header" v-if="windowWidth>=800">
+                    <div class="row header" v-if="windowWidth>=1100">
                         <div class="list col-xl-1 col-md-3 col-sm-6">Cartoncino</div>
                         <div class="list col-xl-1 col-md-3 col-sm-6">Cognome & Nome</div>
                         <div class="list col-xl-1 col-md-3 col-sm-6">Anno Di Nascita</div>
@@ -21,22 +21,23 @@
                     <div>
                         <div class="row playerRow" v-for="detail in dettaglio" :key="detail.ID">
                             <div class="col-lg-1 col-md-3 col-sm-6"><img class="campioncino" :src="detail.Cartoncino"> </div>
-                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Cognome & Nome: </span>{{ detail.CognomeNome }}</div>
-                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Anno di Nascita: </span>{{ detail.AnnodiNascita }} </div>
-                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Squadra: </span>{{ detail.Squadra }}</div>
-                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Nazionalità: </span>{{ detail.Nazionalità }}</div>
-                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Piede: </span>{{ detail.Piede }}</div>
-                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Media Fantavoto: </span>{{ detail.MediaFantavoto }}</div>
-                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Media voto: </span>{{ detail.MediaVoto }}</div>
-                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">RC: </span>{{ detail.RC }}</div>
-                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Ruolo Mantra: </span>{{ detail.RuoloM }}</div>
-                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Quotazione Attuale: </span>{{ detail.QuotazioneAttuale }}</div>
-                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Quotazione Iniziale: </span>{{ detail.QuotazioneIniziale }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Cognome & Nome: </span>{{ detail.CognomeNome }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Anno di Nascita: </span>{{ detail.AnnodiNascita }} </div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Squadra: </span>{{ detail.Squadra }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Nazionalità: </span>{{ detail.Nazionalità }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Piede: </span>{{ detail.Piede }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Media Fantavoto: </span>{{ detail.MediaFantavoto }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Media voto: </span>{{ detail.MediaVoto }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">RC: </span>{{ detail.RC }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Ruolo Mantra: </span>{{ detail.RuoloM }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Quotazione Attuale: </span>{{ detail.QuotazioneAttuale }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Quotazione Iniziale: </span>{{ detail.QuotazioneIniziale }}</div>
                         </div>
                     </div>
             </div>
         </div>
-        <router-link to="/list"><button type="button" class="btn btn-success">Indietro</button></router-link>
+        <!--pulsante per tornare alla lista dei calciatori-->
+        <router-link to="/list"><button type="button" class="btn btn-success indietro">Indietro</button></router-link>
     </div>
 </template>
 
@@ -77,8 +78,8 @@ export default {
     },
 
     methods:{
-        //Assegnazione alla variabile windowWidth della larghezza attuale della finestra
-        //La funzione viene chiamata ogni qualvolta la dimensione della finestra cambia (resize)
+    //Assegnazione alla variabile windowWidth della larghezza attuale della finestra
+    //La funzione viene chiamata ogni qualvolta la dimensione della finestra cambia (resize)
         onResize() {
         this.windowWidth = window.innerWidth
         } 
@@ -109,10 +110,12 @@ export default {
   width:100%;
   height:auto;
 }
+
 .playerRow{
   border-bottom:1px solid black;
   text-align:center;
 }
+
 .header{
     border-bottom:1px solid black;
     text-align:center;
@@ -137,5 +140,7 @@ export default {
     padding:0.5%;
 }
 
-
+.indietro{
+    margin: 20px;
+}
 </style>

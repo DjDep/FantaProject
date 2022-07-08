@@ -1,11 +1,12 @@
 <template>
     <div class="container">
-        <HeaderSquadre/>
+        <!--<HeaderSquadre/>-->
         <h1>Squadre </h1>
         <h6>Campionato Serie A 2021/2022</h6>
+        <!--Tabella dettaglio singole squadre-->
         <div class="row">
             <div class="col-lg-12">
-                    <div class="row header" v-if="windowWidth>=800">
+                    <div class="row header" v-if="windowWidth>=1100">
                         <div class="list col-xl-1 col-md-3 col-sm-6">Logo</div>
                         <div class="list col-xl-1 col-md-3 col-sm-6">Squadra</div>
                         <div class="list col-xl-1 col-md-3 col-sm-6">Allenatore</div>
@@ -16,19 +17,20 @@
                         <div class="list col-xl-1 col-md-3 col-sm-6">Classifica</div>
                     </div>
                     <div>
-                        <div class="row playerRow" v-for="teamDetail in teamsDetail" :key="teamDetail.id">
+                        <div class="row teamRow" v-for="teamDetail in teamsDetail" :key="teamDetail.id">
                             <div class="col-lg-1 col-md-3 col-sm-6"><img class="logo" :src="teamDetail.Logo"></div>
-                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Squadra: </span>{{ teamDetail.Squadra }}</div>
-                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Allenatore: </span>{{ teamDetail.Allenatore }} </div>
-                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Stadio: </span>{{ teamDetail.Stadio }}</div>
-                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Capienza stadio: </span>{{ teamDetail.CapienzaStadio }}</div>
-                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Data fondazione: </span>{{ teamDetail.DataFondazione }}</div>
-                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Info: </span>{{ teamDetail.Info }}</div>
-                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Classifica: </span>{{ teamDetail.Classifica }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Squadra: </span>{{ teamDetail.Squadra }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Allenatore: </span>{{ teamDetail.Allenatore }} </div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Stadio: </span>{{ teamDetail.Stadio }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Capienza stadio: </span>{{ teamDetail.CapienzaStadio }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Data fondazione: </span>{{ teamDetail.DataFondazione }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Info: </span>{{ teamDetail.Info }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Classifica: </span>{{ teamDetail.Classifica }}</div>
                         </div>
                     </div>
             </div>
         </div>
+        <!--pulsante per tornare alla lista delle squadre-->
         <router-link to="/teams"><button type="button" class="btn btn-success indietro">Indietro</button></router-link>
     </div>
 </template>
@@ -47,6 +49,7 @@ import  db  from '../main.js';
                     windowWidth:window.innerWidth
                 }
             },
+        //funzione che alla creazione restituisce i dati della squadra selezionata usando l'id come key
         created() {
             console.log(this.id)
             db.collection('teams').doc(this.id).get().then(doc => {
@@ -61,21 +64,23 @@ import  db  from '../main.js';
                         'Info': doc.data().Info,
                         'Classifica': doc.data().Classifica+"°",
                   }
-                  console.log(data)
                    this.teamsDetail.push(data) 
                 })
         },
-
+    //Assegnazione alla variabile windowWidth della larghezza attuale della finestra
+    //La funzione viene chiamata ogni qualvolta la dimensione della finestra cambia (resize)
     onResize() {
       this.windowWidth = window.innerWidth
     },
 
+    //al mount della pagina si aggiunge l'event listener per la funzione onResize 
     mounted() {
         this.$nextTick(() => {
         window.addEventListener('resize', this.onResize);
         })
     },
 
+    //rimozione dell'event listener prima del destroy
     beforeDestroy() { 
         window.removeEventListener('resize', this.onResize); 
     },
@@ -92,9 +97,9 @@ import  db  from '../main.js';
     padding:0.5%;
 }
 
-.playerRow{
-  border-bottom:1px solid black;
-  text-align:center;
+.teamRow{
+    border-bottom:1px solid black;
+    text-align:center;
 }
 .header{
     border-bottom:1px solid black;
@@ -102,12 +107,11 @@ import  db  from '../main.js';
     font-weight:bold;
 }
 
-    .row{
-      display:flex;
-      flex-direction:row;
-      width:100%;
-    }
-
+.row{
+    display:flex;
+    flex-direction:row;
+    width:100%;
+}
 
 .logo {
     height: 50px;
@@ -119,9 +123,7 @@ import  db  from '../main.js';
     color: green;
     font-weight:bold;
 }
-.tableData {
-    text-align: center;
-}
+
 .indietro{
     margin: 20px;
 }

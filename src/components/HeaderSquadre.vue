@@ -29,10 +29,9 @@ export default {
               querySnapshot.forEach(doc => {
                 const data = {
                   key: doc.id,
-                      
                       'Squadra': doc.data().Squadra,
                       'Logo': doc.data().Logo,
-                }
+                  }
                   this.squadre.push(data) 
                   })
               });

@@ -1,9 +1,10 @@
 
 <template>
 <div class="container">
+    <!--tabella lista calciatori-->
     <div class="row">
         <div class="col-lg-12">
-                <div class="row header" v-if="windowWidth>=800"> <!-- 800 -->
+                <div class="row header" v-if="windowWidth>=1100"> 
                     <div class="list col-xl-1 col-md-3 col-sm-6">Cartoncino</div>
                     <div class="list col-xl-1 col-md-3 col-sm-6">Cognome & Nome</div>
                     <div class="list col-xl-1 col-md-3 col-sm-6">Anno Di Nascita</div>
@@ -20,17 +21,17 @@
                 <div>
                     <div class="row playerRow" v-for="(footballer, index) in footballersLoaded" :key="index">
                         <div class="col-lg-1 col-md-3 col-sm-6"><img class="campioncino" :src="footballer.Cartoncino"> </div>
-                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Cognome & Nome: </span><router-link class="text-decoration-none text-dark":to ="{name: 'detail', params: {id: footballer.key}}">{{ footballer.CognomeNome }}</router-link></div>
-                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Data di Nascita: </span>{{ footballer.AnnodiNascita }} </div>
-                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Squadra: </span>{{ footballer.Squadra }}</div>
-                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Nazionalità: </span>{{ footballer.Nazionalità }}</div>
-                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Piede: </span>{{ footballer.Piede }}</div>
-                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Media Fantavoto: </span>{{ footballer.MediaFantavoto }}</div>
-                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Media voto: </span>{{ footballer.MediaVoto }}</div>
-                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Ruolo Classic: </span>{{ footballer.RC }}</div>
-                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Ruolo Mantra: </span>{{ footballer.RuoloM }}</div>
-                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Quotazione Attuale: </span>{{ footballer.QuotazioneAttuale }}</div>
-                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<800">Quotazione Iniziale: </span>{{ footballer.QuotazioneIniziale }}</div>
+                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Cognome & Nome: </span><router-link class="text-decoration-none text-dark" :to ="{name: 'detail', params: {id: footballer.key}}">{{ footballer.CognomeNome }}</router-link></div>
+                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Data di Nascita: </span>{{ footballer.AnnodiNascita }} </div>
+                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Squadra: </span>{{ footballer.Squadra }}</div>
+                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Nazionalità: </span>{{ footballer.Nazionalità }}</div>
+                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Piede: </span>{{ footballer.Piede }}</div>
+                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Media Fantavoto: </span>{{ footballer.MediaFantavoto }}</div>
+                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Media voto: </span>{{ footballer.MediaVoto }}</div>
+                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Ruolo Classic: </span>{{ footballer.RC }}</div>
+                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Ruolo Mantra: </span>{{ footballer.RuoloM }}</div>
+                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Quotazione Attuale: </span>{{ footballer.QuotazioneAttuale }}</div>
+                        <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Quotazione Iniziale: </span>{{ footballer.QuotazioneIniziale }}</div>
                     </div>
                 </div>
         </div>
@@ -61,7 +62,9 @@ export default {
       windowWidth:window.innerWidth
     };
   },
-  created() { /* Creazione dell'array dei giocatori */
+  
+  // Creazione dell'array dei giocatori 
+  created() { 
             db.collection('footballers').orderBy("RC", "desc").get().then(querySnapshot => {
                 querySnapshot.forEach(doc => {
                   const data = {
@@ -91,6 +94,8 @@ export default {
       if (this.length > this.footballers.length) return;
       this.length = this.length + 10;
     },
+    //Assegnazione alla variabile windowWidth della larghezza attuale della finestra
+    //La funzione viene chiamata ogni qualvolta la dimensione della finestra cambia (resize)
     onResize() {
       this.windowWidth = window.innerWidth
     }
@@ -102,13 +107,16 @@ export default {
     footballersLoaded() {
       return this.footballers.slice(0, this.length);
     },
-  },
+  },  
+
+  //al mount della pagina si aggiunge l'event listener per la funzione onResize 
   mounted() {
     this.$nextTick(() => {
       window.addEventListener('resize', this.onResize);
     })
   },
 
+  //rimozione dell'event listener prima del destroy
   beforeDestroy() { 
     window.removeEventListener('resize', this.onResize); 
   },
@@ -116,42 +124,42 @@ export default {
 </script>
 
 <style scoped>
-
 .campioncino{
-  width:800%;
+  width:100%;
   height:auto;
 }
+
 .playerRow{
   border-bottom:1px solid black;
   text-align:center;
   
 }
-    .header{
-      border-bottom:1px solid black;
-      text-align:center;
-      font-weight:bold;
-    }
+.header{
+  border-bottom:1px solid black;
+  text-align:center;
+  font-weight:bold;
+}
 
-    .list{
-        text-align: center;
-        color: green;
-        font-weight:bold;
-    }
+.list{
+    text-align: center;
+    color: green;
+    font-weight:bold;
+}
 
-    .row{
-      display:flex;
-      flex-direction:row;
-      width:800%;
-    }
+.row{
+  display:flex;
+  flex-direction:row;
+  width:100%;
+}
 
-    .container{
-      max-width:800%;
-      padding:0.5%;
-    }
+.container{
+  max-width:100%;
+  padding:0.5%;
+}
 
-    .load-button{
-      margin: 40px;
-    }
+.load-button{
+  margin: 40px;
+}
 </style>
 
 
