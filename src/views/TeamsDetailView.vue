@@ -1,6 +1,5 @@
 <template>
     <div class="container">
-        <!--<HeaderSquadre/>-->
         <h1>Squadre </h1>
         <h6>Campionato Serie A 2021/2022</h6>
         <!--Tabella dettaglio singole squadre-->
@@ -36,7 +35,6 @@
 </template>
 
 <script>
-import HeaderSquadre from '@/components/HeaderSquadre.vue'
 import Footer from '@/components/Footer.vue'
 import  db  from '../main.js';
     
@@ -85,7 +83,6 @@ import  db  from '../main.js';
         window.removeEventListener('resize', this.onResize); 
     },
         components:{
-            HeaderSquadre,
             Footer,
         }
     }

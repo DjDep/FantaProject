@@ -43,11 +43,6 @@
   </nav>
 </template>
 
-<script lang="ts">
-import db from '../main.js'
-
-</script>
-
 <style scoped>
 .mainNavbar{
   background-color: rgb(0, 135, 68);;

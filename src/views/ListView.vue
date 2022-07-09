@@ -2,7 +2,7 @@
 <template>
 <div class="container">
     <!--tabella lista calciatori-->
-    <div class="row">
+      <div class="row">
         <div class="col-lg-12">
                 <div class="row header" v-if="windowWidth>=1100"> 
                     <div class="list col-xl-1 col-md-3 col-sm-6">Cartoncino</div>
@@ -55,73 +55,74 @@ import  db  from '../main.js';
 
 export default {
   
-  data() {
-    return {
-      footballers: [],
-      length: 10,
-      windowWidth:window.innerWidth
-    };
-  },
-  
-  // Creazione dell'array dei giocatori 
-  created() { 
-            db.collection('footballers').orderBy("RC", "desc").get().then(querySnapshot => {
-                querySnapshot.forEach(doc => {
-                  const data = {
-                        key: doc.id,
-                        'ID': doc.data().ID,
-                        'Cartoncino': doc.data().Cartoncino,
-                        'AnnodiNascita': doc.data()['Anno di nascita'].replace("00:00:00", ""),
-                        'CognomeNome': doc.data().CognomeNome,
-                        'Squadra': doc.data().Squadra,
-                        'Nazionalità': doc.data().Nazionalità,
-                        'Piede': doc.data().Piede,
-                        'MediaFantavoto': doc.data()['Media fantavoto'],
-                        'MediaVoto': doc.data()['Media voto'],
-                        'RC': doc.data().RC,
-                        'RuoloM': doc.data().RuoloM,
-                        'QuotazioneAttuale': doc.data().QuotazioneAttuale,
-                        'QuotazioneIniziale': doc.data().QuotazioneIniziale,
-                  }
-                   this.footballers.push(data)  
-                     
-                    })
-                });
-        },
-  methods: {
-    /* Vengono caricati 10 giocatori aggiuntivi quando la funzione viene attivata dal button*/
-    loadMore() {
-      if (this.length > this.footballers.length) return;
-      this.length = this.length + 10;
+    data() {
+      return {
+        footballers: [],
+        length: 10,
+        windowWidth:window.innerWidth
+      };
     },
-    //Assegnazione alla variabile windowWidth della larghezza attuale della finestra
-    //La funzione viene chiamata ogni qualvolta la dimensione della finestra cambia (resize)
-    onResize() {
-      this.windowWidth = window.innerWidth
-    }
-  },
-  computed: { 
-    /* Si prendono i dati all'interno dell'array footballers dalla posizione 0 alla posizione selezionata 
-  = su schermo sono mostrati i dati dalla posizione 0 alla posizione raggiunta dall'utente con il LoadButton
-   */
-    footballersLoaded() {
-      return this.footballers.slice(0, this.length);
+    
+    // Creazione dell'array dei giocatori 
+    created() { 
+              db.collection('footballers').orderBy("RC", "desc").get().then(querySnapshot => {
+                  querySnapshot.forEach(doc => {
+                    const data = {
+                          key: doc.id,
+                          'ID': doc.data().ID,
+                          'Cartoncino': doc.data().Cartoncino,
+                          'AnnodiNascita': doc.data()['Anno di nascita'].replace("00:00:00", ""),
+                          'CognomeNome': doc.data().CognomeNome,
+                          'Squadra': doc.data().Squadra,
+                          'Nazionalità': doc.data().Nazionalità,
+                          'Piede': doc.data().Piede,
+                          'MediaFantavoto': doc.data()['Media fantavoto'],
+                          'MediaVoto': doc.data()['Media voto'],
+                          'RC': doc.data().RC,
+                          'RuoloM': doc.data().RuoloM,
+                          'QuotazioneAttuale': doc.data().QuotazioneAttuale,
+                          'QuotazioneIniziale': doc.data().QuotazioneIniziale,
+                    }
+                    this.footballers.push(data)  
+                      
+                      })
+                  });
+          },
+    methods: {
+      /* Vengono caricati 10 giocatori aggiuntivi quando la funzione viene attivata dal button*/
+      loadMore() {
+        if (this.length > this.footballers.length) return;
+        this.length = this.length + 10;
+      },
+      //Assegnazione alla variabile windowWidth della larghezza attuale della finestra
+      //La funzione viene chiamata ogni qualvolta la dimensione della finestra cambia (resize)
+      onResize() {
+        this.windowWidth = window.innerWidth
+      }
     },
-  },  
+    computed: { 
+      /* Si prendono i dati all'interno dell'array footballers dalla posizione 0 alla posizione selezionata 
+    = su schermo sono mostrati i dati dalla posizione 0 alla posizione raggiunta dall'utente con il LoadButton
+    */
+      footballersLoaded() {
+        return this.footballers.slice(0, this.length);
+      },
+    },  
 
-  //al mount della pagina si aggiunge l'event listener per la funzione onResize 
-  mounted() {
-    this.$nextTick(() => {
-      window.addEventListener('resize', this.onResize);
-    })
-  },
+    //al mount della pagina si aggiunge l'event listener per la funzione onResize 
+    mounted() {
+      this.$nextTick(() => {
+        window.addEventListener('resize', this.onResize);
+      })
+    },
 
-  //rimozione dell'event listener prima del destroy
-  beforeDestroy() { 
-    window.removeEventListener('resize', this.onResize); 
-  },
-};
-</script>
+    //rimozione dell'event listener prima del destroy
+    beforeDestroy() { 
+      window.removeEventListener('resize', this.onResize); 
+    },
+  };
+
+  </script>
 
 <style scoped>
 .campioncino{
@@ -160,8 +161,5 @@ export default {
 .load-button{
   margin: 40px;
 }
-</style>
 
-
-
-
+  </style>

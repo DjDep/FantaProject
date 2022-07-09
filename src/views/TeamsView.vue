@@ -26,13 +26,12 @@
                             <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Classifica: </span>{{ team.Classifica }}</div>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
-    </div>
 </template>
 
-
-<script>
+ <script>
 import  db  from '../main.js';
 import HeaderSquadre from '/src/components/HeaderSquadre.vue'
 
@@ -66,7 +65,7 @@ export default {
     //Assegnazione alla variabile windowWidth della larghezza attuale della finestra
     //La funzione viene chiamata ogni qualvolta la dimensione della finestra cambia (resize)
     onResize() {
-      this.windowWidth = window.innerWidth
+    this.windowWidth = window.innerWidth
     },
 
     //al mount della pagina si aggiunge l'event listener per la funzione onResize 
@@ -83,11 +82,10 @@ export default {
         components: {
             HeaderSquadre
         },
-       
+    
 
-    }
-
-</script>
+}
+ </script>
 
 <style scoped>
 .container{
@@ -123,7 +121,3 @@ export default {
     font-weight:bold;
 }
 </style>
-
-
-
-

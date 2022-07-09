@@ -107,7 +107,6 @@ methods: {
     readData(){
       db.collection('myTeam').get().then(querySnapshot => {
         querySnapshot.forEach (doc =>  {
-          console.log(doc.data())
           const data =  {
             id_documento_in_squadra:doc.id,
             key: doc.data().key,

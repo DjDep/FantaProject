@@ -4,13 +4,13 @@ import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import vSelect from 'vue-select';
 import 'bootstrap/dist/css/bootstrap.css';
+import firebase from 'firebase';
 
-import firebase from 'firebase'
+
 
 import App from './App.vue'
 import router from './router'
 Vue.use(BootstrapVue);
-
 
 
 const firebaseConfig = {
@@ -25,9 +25,8 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-var db = firebase.firestore();
-
-export default db
+let db = firebase.firestore();
+export default db;
 
 Vue.use(VueCompositionAPI)
 
