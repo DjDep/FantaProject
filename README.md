@@ -1,10 +1,10 @@
 # FantaProject
 Progetto per esame di Informatica ed elementi di programmazione II
-Lavoro svolto da: Dapit Damiano(221212), Favaro Mattia, Mazzetto Matteo
+Lavoro svolto da: Dapit Damiano(221212), Favaro Mattia(221055), Mazzetto Matteo(220812)
 
 ## Introduzione al Progetto
 La decisione di fare un progetto sul Fantacalcio è un'idea nata dal file-rouge che lega i 3 elementi del nostro gruppo, ovvero la passione per il calcio.
-Abbiamo quindi deciso di partire questa idea per sviluppare un sito utile alle persone a cui piace giocare a questo gioco per potersi informare sulle squadre presenti nel campionato, sui giocatori di ogni squadra avendo anche la possibilità di salvarsi la propria squadra.
+Abbiamo quindi deciso di partire da questa idea per sviluppare un sito utile alle persone a cui piace giocare a questo gioco per potersi informare sulle squadre presenti nel campionato, sui giocatori di ogni squadra, avendo anche la possibilità di salvarsi la propria squadra.
 
 ## Tecnologie utilizzate
 Vue 2, 
@@ -16,7 +16,7 @@ PopperJs,
 
 ## Composizione del progetto
 
-- Home: La home è la pagina principale del progetto, la prima che si incontra al lancio del progetto (con il comando npm run dev). All'interno di questa sono presenti 3 card che portano alle tre pagine principali del nostro progetto: "Squadre", "Giocatori", "La mia squadra". Per tornare a questa basta schiacciare sul logo (il pallone) presente nell'angolo sinistro della topbar. Cliccando sul pulsante vai alla pagina presente nelle singole card si verrà portati allinterno delle specifiche sezioni.
+- Home: La home è la pagina principale del progetto, la prima che si incontra al lancio del progetto (con il comando npm run dev). All'interno di questa sono presenti 3 card che portano alle tre pagine principali del nostro progetto: "Squadre", "Giocatori serie A", "La mia squadra". Per tornare a questa basta schiacciare sul logo (il pallone) presente nell'angolo sinistro della topbar. Cliccando sul pulsante vai alla pagina presente nelle singole card si verrà portati all'interno delle specifiche sezioni.
 
 - Pagina delle squadre: Qui sono presenti tutte le squadre del campionato di serie A con alcune caratteristiche fondamentali: Nome, Logo, allenatore, Stadio, capienza stadio, data di fondazione della squadra, posizione in classifica nell'ultimo campionato. Ci si arriva cliccando su "squadra" nella topbar o nel footer.
 Cliccando sul nome di qualsiasi squadra si aprirà la pagina di dettaglio di quella specifica squadra.
@@ -30,7 +30,7 @@ alla pagina delle squadre
 Per entrare nella pagina di dettaglio dei giocatori basta cliccare il nome del giocatore desiderato. Per non sovraccaricare la pagina con tropi giocatori è stato inserito il 
 pulsante "carica altri giocatori", che permette di aggiungere giocatori a gruppi di 10 alla volta.
 
-- Dettaglio giocatore: Inquesta sezione è presente il dettaglio di un singolo giocatore, selezionato dalla lista dei calciatori. In basso a destra nella pagina è prsente un pulsante "indietro", che permette di tornare alla pagina con la lista dei calciatori.
+- Dettaglio giocatore: In questa sezione è presente il dettaglio di un singolo giocatore, selezionato dalla lista dei calciatori. In basso a destra nella pagina sono presenti due pulsanti: "Vai al listone" e "Vai alla mia squadra", che portano rispettivamente alla pagina del listone e a quella della mia squadra.
 
 * Footer: contiene il nome del Team attraverso la quale si può raggiungere la Home tramite un click su di essa; inoltre è possibile navigare tra le varie sezioni del sito e raggiungere i canali social dei suoi sviluppatori.
 

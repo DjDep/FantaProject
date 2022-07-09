@@ -13,7 +13,7 @@
                         <div class="list col-xl-1 col-md-3 col-sm-6">Piede</div>
                         <div class="list col-xl-1 col-md-3 col-sm-6">Media Fantavoto</div>
                         <div class="list col-xl-1 col-md-3 col-sm-6">Media Voto</div>
-                        <div class="list col-xl-1 col-md-3 col-sm-6">RC</div>
+                        <div class="list col-xl-1 col-md-3 col-sm-6">Ruolo classic</div>
                         <div class="list col-xl-1 col-md-3 col-sm-6">Ruolo Mantra</div>
                         <div class="list col-xl-1 col-md-3 col-sm-6">Quotazione Attuale</div>
                         <div class="list col-xl-1 col-md-3 col-sm-6">Quotazione Iniziale</div>
@@ -28,7 +28,7 @@
                             <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Piede: </span>{{ detail.Piede }}</div>
                             <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Media Fantavoto: </span>{{ detail.MediaFantavoto }}</div>
                             <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Media voto: </span>{{ detail.MediaVoto }}</div>
-                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">RC: </span>{{ detail.RC }}</div>
+                            <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Ruolo classic: </span>{{ detail.RC }}</div>
                             <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Ruolo Mantra: </span>{{ detail.RuoloM }}</div>
                             <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Quotazione Attuale: </span>{{ detail.QuotazioneAttuale }}</div>
                             <div class="col-lg-1 col-md-3 col-sm-6"><span class="list" v-if="windowWidth<1100">Quotazione Iniziale: </span>{{ detail.QuotazioneIniziale }}</div>
@@ -37,7 +37,8 @@
             </div>
         </div>
         <!--pulsante per tornare alla lista dei calciatori-->
-        <router-link to="/list"><button type="button" class="btn btn-success indietro">Indietro</button></router-link>
+        <router-link to="/myTeam"><button type="button" class="btn btn-success indietro">Vai alla mia squadra</button></router-link>
+        <router-link to="/list"><button type="button" class="btn btn-success indietro">Vai al Listone</button></router-link>
     </div>
 </template>
 
