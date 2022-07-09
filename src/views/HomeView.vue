@@ -10,7 +10,7 @@
                                 <img src="@/campioncinoListone.png" class="card-img-top homeImage" alt="Listone">
                                 <div class="card-body">
                                     <h5 class="card-title">Listone Calciatori</h5>
-                                    <p class="card-text">Qui puoi trovare la lista completa dei calciatori della serie A</p>
+                                    <p class="card-text">Qui puoi trovare la lista dei calciatori della serie A</p>
                                     <router-link to="/list"><a class="btn btn-primary navButton">Vai alla pagina</a></router-link>
                                 </div>
                             </div>
@@ -29,7 +29,7 @@
                         <!--Card per il collegamento alla mia squadra-->
                         <div class="col-lg-4 col-md-6 col-sm-12 mx-auto">
                             <div class="card homeCards">
-                                <img src="@/NewLogoTeam.png" class="homeImage correctHeight" alt="La mia squadra">
+                                <img src="@/NewLogoTeam.png" class="card-img-top homeImage" alt="La mia squadra">
                                 <div class="card-body">
                                     <h5 class="card-title">La mia squadra</h5>
                                     <p class="card-text">Qui puoi trovare tutti i giocatori della tua squadra </p>
