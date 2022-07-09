@@ -30,12 +30,11 @@
             </div>
         </div>
         <!--pulsante per tornare alla lista delle squadre-->
-        <router-link to="/teams"><button type="button" class="btn btn-success indietro">Indietro</button></router-link>
+        <router-link to="/teams"><button type="button" class="btn btn-success indietro">Vai Alle Squadre</button></router-link>
     </div>
 </template>
 
 <script>
-import Footer from '@/components/Footer.vue'
 import  db  from '../main.js';
     
     export default {
@@ -49,7 +48,6 @@ import  db  from '../main.js';
             },
         //funzione che alla creazione restituisce i dati della squadra selezionata usando l'id come key
         created() {
-            console.log(this.id)
             db.collection('teams').doc(this.id).get().then(doc => {
                   const data = {
                         'id': doc.data().id,
@@ -82,10 +80,7 @@ import  db  from '../main.js';
     beforeDestroy() { 
         window.removeEventListener('resize', this.onResize); 
     },
-        components:{
-            Footer,
-        }
-    }
+}
 </script>
 
 <style scoped>

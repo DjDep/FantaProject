@@ -62,7 +62,6 @@ methods: {
             .doc()
             .set({...this.selected})
             .then((data) => {
-              console.log(data)
               alert ("Giocatore inserito correttamente");
               this.selected = null;
               this.myTeam = [];

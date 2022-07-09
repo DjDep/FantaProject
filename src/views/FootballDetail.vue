@@ -57,7 +57,6 @@ export default {
 
 //funzione che alla creazione restituisce i dati del giocatore selezionato usando l'id come key
  created() {
-    console.log(this.id)
         db.collection('footballers').doc(this.id).get().then(doc => {
                 const data = {
                     'ID': doc.data().ID,
